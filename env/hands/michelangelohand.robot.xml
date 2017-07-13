@@ -1,0 +1,24 @@
+  <Robot name="Michelangelo">
+	<KinBody name="base">
+		<Body name="base">
+		    <Geom type="box">
+		      <extents>.001 0.001 0.001</extents>
+		      <diffuseColor>0.5 0.5 0.5</diffuseColor>
+		    </Geom>
+	   	</Body>
+	</KinBody>
+	<robot file="kinbody/michelangelo.robot.xml" >
+	   	<rotationaxis>1 0 0 90</rotationaxis>
+	   	<rotationaxis>0 1 0 -90</rotationaxis>
+		<translation>0.0 0.0 0.</translation>
+	</robot>	
+	<robot>
+		<KinBody name="robot">
+		   	<Joint name="base_root" type="hinge" enable="false">
+	   			<body>base</body>
+	   			<body>root</body>
+	   			<limits>0 0</limits>
+	   		</Joint>
+		</KinBody>
+	</robot>
+  </Robot>

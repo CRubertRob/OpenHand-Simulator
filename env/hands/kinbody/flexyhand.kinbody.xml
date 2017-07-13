@@ -1,0 +1,272 @@
+<KinBody name="FlexyHand">
+   	 <Body name="handbase" type="dynamic">
+   	 
+		<Geom type="trimesh"  modifiable="false">
+   			<data>flexyhand/RH_Hand_Body.stl 1</data>
+   			<Render>flexyhand/RH_Hand_Body.stl 1</Render>
+      	</Geom>
+   	</Body>
+	
+	<!-- Index -->   	
+	<Body name="Index-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0 -0.105 0.017 </Translation> 
+	   	<rotationaxis>0 1 0 90</rotationaxis>
+	   	<rotationaxis>0 0 1 -90</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_2-1.stl 1</data> 
+	      	<Render>flexyhand/RH_2-1.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JIndex-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Index-P</Body>
+	   	<offsetfrom>Index-P</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Index-M" type="dynamic"> 
+		<offsetfrom>Index-P</offsetfrom>
+		<Translation>0.0 0.0 0.04</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_2-2.stl 1</data> 
+	      	<Render>flexyhand/RH_2-2.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JIndex-M" enable="true">
+		<Body>Index-M</Body>
+	   	<Body>Index-P</Body>
+	   	<offsetfrom>Index-M</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>-1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Index-D" type="dynamic"> 
+		<offsetfrom>Index-M</offsetfrom>
+		<Translation>0.0 0.0 0.025</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_2-3.stl 1</data> 
+	      	<Render>flexyhand/RH_2-3.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JIndex-D">
+		<Body>Index-M</Body>
+	   	<Body>Index-D</Body>
+	   	<offsetfrom>Index-D</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>	
+	 
+	<!-- Middle -->   	
+	<Body name="Middle-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0 -0.10 -0.004 </Translation> 
+ 		<rotationaxis>0 1 0 90</rotationaxis>
+	   	<rotationaxis>0 0 1 -90</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_3-1.stl 1</data> 
+	      	<Render>flexyhand/RH_3-1.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JMiddle-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Middle-P</Body>
+	   	<offsetfrom>Middle-P</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Middle-M" type="dynamic"> 
+		<offsetfrom>Middle-P</offsetfrom>
+		<Translation>0.0 0.0 0.044</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_3-2.stl 1</data> 
+	      	<Render>flexyhand/RH_3-2.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JMiddle-M" enable="true">
+		<Body>Middle-M</Body>
+	   	<Body>Middle-P</Body>
+	   	<offsetfrom>Middle-M</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>-1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Middle-D" type="dynamic"> 
+		<offsetfrom>Middle-M</offsetfrom>
+		<Translation>0.0 0.0 0.028</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_3-3.stl 1</data> 
+	      	<Render>flexyhand/RH_3-3.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JMiddle-D">
+		<Body>Middle-M</Body>
+	   	<Body>Middle-D</Body>
+	   	<offsetfrom>Middle-D</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>			
+
+	<!-- Ring -->   	
+	<Body name="Ring-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0 -0.094 -0.0245</Translation> 
+  	 	<rotationaxis>0 1 0 90</rotationaxis>
+	   	<rotationaxis>0 0 1 -90</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_4-1.stl 1</data> 
+	      	<Render>flexyhand/RH_4-1.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JRing-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Ring-P</Body>
+	   	<offsetfrom>Ring-P</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Ring-M" type="dynamic"> 
+		<offsetfrom>Ring-P</offsetfrom>
+		<Translation>0.0 0.0 0.042</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_4-2.stl 1</data> 
+	      	<Render>flexyhand/RH_4-2.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JRing-M" enable="true">
+		<Body>Ring-M</Body>
+	   	<Body>Ring-P</Body>
+	   	<offsetfrom>Ring-M</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>-1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Ring-D" type="dynamic"> 
+		<offsetfrom>Ring-M</offsetfrom>
+		<Translation>0.0 0.0 0.026</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_4-3.stl 1</data> 
+	      	<Render>flexyhand/RH_4-3.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JRing-D">
+		<Body>Ring-M</Body>
+	   	<Body>Ring-D</Body>
+	   	<offsetfrom>Ring-D</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>		 
+	 
+	<!-- Pinky -->   	
+	<Body name="Pinky-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.0 -0.082 -0.044</Translation> 
+	   	<rotationaxis>0 1 0 90</rotationaxis>
+	   	<rotationaxis>0 0 1 -90</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_5-1.stl 1</data> 
+	      	<Render>flexyhand/RH_5-1.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JPinky-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Pinky-P</Body>
+	   	<offsetfrom>Pinky-P</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Pinky-M" type="dynamic"> 
+		<offsetfrom>Pinky-P</offsetfrom>
+		<Translation>0.0 0.0 0.035</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_5-2.stl 1</data> 
+	      	<Render>flexyhand/RH_5-2.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JPinky-M" enable="true">
+		<Body>Pinky-M</Body>
+	   	<Body>Pinky-P</Body>
+	   	<offsetfrom>Pinky-M</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>-1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Pinky-D" type="dynamic"> 
+		<offsetfrom>Pinky-M</offsetfrom>
+		<Translation>0.0 0.0 0.020</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_5-3.stl 1</data> 
+	      	<Render>flexyhand/RH_5-3.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JPinky-D">
+		<Body>Pinky-M</Body>
+	   	<Body>Pinky-D</Body>
+	   	<offsetfrom>Pinky-D</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>		 
+	 
+	<!-- Thumb -->   	
+	<Body name="Thumb-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.040 -0.057 0.04</Translation>
+	   	<rotationaxis>0 1 0 90</rotationaxis>	   	
+	   	<rotationaxis>1 0 0 -125</rotationaxis>
+	   	<rotationaxis>0 0 1 -60</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_1-1.stl 1</data> 
+	      	<Render>flexyhand/RH_1-1.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JThumb-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Thumb-P</Body>
+	   	<offsetfrom>Thumb-P</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Thumb-M" type="dynamic"> 
+		<offsetfrom>Thumb-P</offsetfrom>
+		<Translation>0.0 -0.002 0.034</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>flexyhand/RH_1-2.stl 1</data> 
+	      	<Render>flexyhand/RH_1-2.stl 1</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JThumb-M" enable="true">
+		<Body>Thumb-M</Body>
+	   	<Body>Thumb-P</Body>
+	   	<offsetfrom>Thumb-M</offsetfrom>
+		<limitsdeg>0 -70</limitsdeg> 
+		<axis>-1 0 0</axis> 
+		<maxvel>1</maxvel>
+	 </Joint> 	
+</KinBody>

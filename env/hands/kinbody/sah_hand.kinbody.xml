@@ -1,0 +1,334 @@
+<KinBody name="SahHand">
+  <Body name="handbase" type="dynamic">
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0.0  0.0  0.0</Translation>
+      <data>models/sah/sah_base.wrl 0.01</data>
+      <Render>models/sah/sah_base.wrl 0.01</Render>
+    </Geom>
+  </Body>
+
+  <!-- finger 0-->
+  <Body name="Finger0-0" type="dynamic">
+    <Translation>-0.01 -0.0275 0.035</Translation>
+    <rotationaxis>1 0 0 -3.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_thumb.wrl 0.01</data>
+      <Render>models/sah/sah_thumb.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-0">
+    <Body>Finger0-0</Body>
+    <Body>handbase</Body>
+	<offsetfrom>Finger0-0</offsetfrom>
+    <limitsdeg>-1 91</limitsdeg>
+    <axis>0 1 0</axis>
+  </Joint>
+  
+  <Body name="Finger0-1" type="dynamic">
+    <Translation>-0.01 0.02 0.113</Translation>
+    <rotationaxis>0 0 1 -2.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_joint.wrl 0.01</data>
+      <Render>models/sah/sah_joint.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-1" enable="false">
+    <Body>Finger0-1</Body>
+    <Body>Finger0-0</Body>
+	<offsetfrom>Finger0-1</offsetfrom>
+    <limitsdeg>0 0</limitsdeg>
+    <axis>0 1 0</axis>
+  </Joint>
+  
+  <Body name="Finger0-2" type="dynamic">
+    <Translation>-0.01 0.033 0.12</Translation>
+    <rotationaxis>0 0 1 -2.0</rotationaxis>
+    <rotationaxis>1 0 0 -10.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger0.wrl 0.01</data>
+      <Render>models/sah/sah_finger0.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-2">
+    <Body>Finger0-2</Body>
+    <Body>Finger0-1</Body>
+	<offsetfrom>Finger0-2</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger0-3" type="dynamic">
+    <Translation>-0.0095 0.08 0.151</Translation>
+    <rotationaxis>0 0 1 -2.0</rotationaxis>
+    <rotationaxis>1 0 0 -10.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger1.wrl 0.01</data>
+      <Render>models/sah/sah_finger1.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-3"> <!-- enable="false" mimic_pos="finger_0-2*55/90"  mimic_vel="|finger_0-2 1" mimic_accel="|finger_0-2 0"> -->
+    <Body>Finger0-3</Body>
+    <Body>Finger0-2</Body>
+	<offsetfrom>Finger0-3</offsetfrom>
+    <limitsdeg>1 -56</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger0-4" type="dynamic">
+    <Translation>-0.008 0.104 0.17</Translation>
+    <rotationaxis>0 0 1 -2.0</rotationaxis>
+    <rotationaxis>1 0 0 -10.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger2.wrl 0.01</data>
+      <Render>models/sah/sah_finger2.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-4"><!-- enable="false" mimic_pos="finger_0-2*80/90"  mimic_vel="|finger_0-2 1" mimic_accel="|finger_0-2 0">-->
+    <Body>Finger0-4</Body>
+    <Body>Finger0-3</Body>
+	<offsetfrom>Finger0-4</offsetfrom>
+    <limitsdeg>1 -81</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>  
+
+
+  <!-- finger 1-->
+  <Body name="Finger1-0" type="dynamic">
+    <Translation>-0.006 0.079 0.0425</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 35.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_joint.wrl 0.01</data>
+      <Render>models/sah/sah_joint.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_1-0" enable="false">
+    <Body>Finger1-0</Body>
+    <Body>handbase</Body>
+	<offsetfrom>Finger1-0</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger1-1" type="dynamic">
+    <Translation>-0.008 0.088 0.0425</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger0.wrl 0.01</data>
+      <Render>models/sah/sah_finger0.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_1-1">
+    <Body>Finger1-1</Body>
+    <Body>Finger1-0</Body>
+	<offsetfrom>Finger1-0</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger1-2" type="dynamic">
+    <Translation>-0.001 0.144 0.0425</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger1.wrl 0.01</data>
+      <Render>models/sah/sah_finger1.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_1-2"><!-- mimic_pos="finger_1-1*55/90"  mimic_vel="|finger_1-1 1" mimic_accel="|finger_1-1 1">-->
+    <Body>Finger1-2</Body>
+    <Body>Finger1-1</Body>
+	<offsetfrom>Finger1-2</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger1-3" type="dynamic">
+    <Translation>0.001 0.175 0.0425</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 35.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger2.wrl 0.01</data>
+      <Render>models/sah/sah_finger2.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_1-3"><!--  mimic_pos="finger_1-1*80/90"  mimic_vel="|finger_1-1 1" mimic_accel="|finger_1-1 0">-->
+    <Body>Finger1-3</Body>
+    <Body>Finger1-2</Body>
+	<offsetfrom>Finger1-3</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+    
+  <!-- finger 2-->
+  <Body name="Finger2-0" type="dynamic">
+    <Translation>-0.006 0.079 0.0025</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 35.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_joint.wrl 0.01</data>
+      <Render>models/sah/sah_joint.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_2-0" enable="false">
+    <Body>Finger2-0</Body>
+    <Body>handbase</Body>
+	<offsetfrom>Finger2-0</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger2-1" type="dynamic">
+    <Translation>-0.008 0.088 0.0025</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger0.wrl 0.01</data>
+      <Render>models/sah/sah_finger0.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_2-1">
+    <Body>Finger2-1</Body>
+    <Body>Finger2-0</Body>
+	<offsetfrom>Finger2-0</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger2-2" type="dynamic">
+    <Translation>-0.001 0.144 0.003</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger1.wrl 0.01</data>
+      <Render>models/sah/sah_finger1.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_2-2"><!-- mimic_pos="finger_2-1*55/90"  mimic_vel="|finger_2-1 1" mimic_accel="|finger_2-1 1">-->
+    <Body>Finger2-2</Body>
+    <Body>Finger2-1</Body>
+	<offsetfrom>Finger2-2</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger2-3" type="dynamic">
+    <Translation>-0.001 0.175 0.0025</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 35.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger2.wrl 0.01</data>
+      <Render>models/sah/sah_finger2.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_2-3"><!--  mimic_pos="finger_2-1*80/90"  mimic_vel="|finger_2-1 1" mimic_accel="|finger_2-1 0">-->
+    <Body>Finger2-3</Body>
+    <Body>Finger2-2</Body>
+	<offsetfrom>Finger2-3</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  
+    <!-- finger 3-->
+  <Body name="Finger3-0" type="dynamic">
+    <Translation>-0.006 0.079 -0.038</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 35.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_joint.wrl 0.01</data>
+      <Render>models/sah/sah_joint.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_3-0" enable="false">
+    <Body>Finger3-0</Body>
+    <Body>handbase</Body>
+	<offsetfrom>Finger3-0</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger3-1" type="dynamic">
+    <Translation>-0.008 0.088 -0.038</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger0.wrl 0.01</data>
+      <Render>models/sah/sah_finger0.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_3-1">
+    <Body>Finger3-1</Body>
+    <Body>Finger3-0</Body>
+	<offsetfrom>Finger3-0</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger3-2" type="dynamic">
+    <Translation>-0.001 0.144 -0.0375</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger1.wrl 0.01</data>
+      <Render>models/sah/sah_finger1.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_3-2"><!-- mimic_pos="finger_3-1*55/90"  mimic_vel="|finger_3-1 1" mimic_accel="|finger_3-1 1">-->
+    <Body>Finger3-2</Body>
+    <Body>Finger3-1</Body>
+	<offsetfrom>Finger3-2</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+  <Body name="Finger3-3" type="dynamic">
+    <Translation>-0.001 0.175 -0.038</Translation>
+    <rotationaxis>0 1 0 90.0</rotationaxis>
+    <rotationaxis>0 0 1 35.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/sah/sah_finger2.wrl 0.01</data>
+      <Render>models/sah/sah_finger2.wrl 0.01</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_3-3"><!--  mimic_pos="finger_3-1*80/90"  mimic_vel="|finger_3-1 1" mimic_accel="|finger_3-1 0">-->
+    <Body>Finger3-3</Body>
+    <Body>Finger3-2</Body>
+	<offsetfrom>Finger3-3</offsetfrom>
+    <limitsdeg>1 -91</limitsdeg>
+    <axis>-1 0 0</axis>
+  </Joint>
+  
+      
+  <!-- add adjacent links, necessary in order to prevent bogus collisions -->
+  <adjacent>handbase box</adjacent>
+  <adjacent>handbase Finger0-0</adjacent>
+  <adjacent>Finger0-1 Finger0-0</adjacent>
+  <adjacent>Finger0-1 Finger0-2</adjacent>
+  <adjacent>Finger0-2 Finger0-3</adjacent>
+  <adjacent>Finger0-3 Finger0-4</adjacent>  
+  <adjacent>handbase Finger1-0</adjacent>
+  <adjacent>handbase Finger1-1</adjacent>
+  <adjacent>handbase Finger1-3</adjacent>
+  <adjacent>Finger1-1 Finger1-0</adjacent>
+  <adjacent>Finger1-1 Finger1-2</adjacent>
+  <adjacent>Finger1-1 Finger1-3</adjacent>
+  <adjacent>Finger1-2 Finger1-3</adjacent>
+  <adjacent>handbase Finger2-0</adjacent>
+  <adjacent>handbase Finger2-1</adjacent>
+  <adjacent>handbase Finger2-3</adjacent>
+  <adjacent>Finger2-1 Finger2-0</adjacent>
+  <adjacent>Finger2-1 Finger2-2</adjacent>
+  <adjacent>Finger2-1 Finger2-3</adjacent>
+  <adjacent>Finger2-2 Finger2-3</adjacent>
+  <adjacent>handbase Finger3-0</adjacent>
+  <adjacent>handbase Finger3-1</adjacent>
+  <adjacent>handbase Finger3-3</adjacent>
+  <adjacent>Finger3-1 Finger3-0</adjacent>
+  <adjacent>Finger3-1 Finger3-2</adjacent>
+  <adjacent>Finger3-1 Finger3-3</adjacent>
+  <adjacent>Finger3-2 Finger3-3</adjacent>
+  
+</KinBody>

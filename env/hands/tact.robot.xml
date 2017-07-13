@@ -1,0 +1,13 @@
+<Robot>
+  <KinBody file="./kinbody/tact.kinbody.xml">
+  <RotationAxis>1 0 0 90</RotationAxis>
+  </KinBody>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>0.03 -0.04 0.05</Translation>
+    <joints>JF0-MCP JF1-MCP JF2-MCP JF3-MCP JF4-MCP JF4-PIP </joints>
+    <closingdirection>1 1 1 1 0 1 </closingdirection>
+    <direction> 1 0 0</direction>
+  </Manipulator>
+</Robot>

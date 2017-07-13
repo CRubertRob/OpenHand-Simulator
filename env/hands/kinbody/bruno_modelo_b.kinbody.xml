@@ -1,0 +1,288 @@
+<KinBody name="BrunoModeloB">
+   	 <Body name="handbase" type="dynamic">
+		<Geom type="trimesh"  modifiable="false">
+   			<data>Modelo_B/Palma/Palma_Superior+Palma_Inferior_DEVALHAND2-ModeloB.stl 0.001</data>
+   			<Render>Modelo_B/Palma/Palma_Superior+Palma_Inferior_DEVALHAND2-ModeloB.stl 0.001</Render>
+      	</Geom>
+   	</Body>
+	
+	<!-- Index -->   	
+	<Body name="Index-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.0 0.0 0.01186</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Indice/Falange_Proximal_Indice_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Indice/Falange_Proximal_Indice_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JIndex-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Index-P</Body>
+	   	<offsetfrom>Index-P</offsetfrom>
+		<limitsdeg>0 100</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Index-M" type="dynamic"> 
+		<offsetfrom>Index-P</offsetfrom>
+		<Translation>0.0 -0.04 0.00</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Indice/Falange_Medial_Indice_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Indice/Falange_Medial_Indice_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JIndex-M" enable="false" mimic_pos="-0.53*(JIndex-P^3)+1.47*(JIndex-P^2)-0.22*(JIndex-P)+0.1" mimic_vel="|JIndex-P 1">
+		<Body>Index-M</Body>
+	   	<Body>Index-P</Body>
+	   	<offsetfrom>Index-M</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 -1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Index-D" type="dynamic"> 
+		<offsetfrom>Index-M</offsetfrom>
+		<Translation>0.0 -0.02 0.00</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Indice/Falange_Distal_Indice_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Indice/Falange_Distal_Indice_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JIndex-D" enable="false" mimic_pos="-1.04*(JIndex-P^3)+2.75*(JIndex-P^2)-0.47*(JIndex-P)+0.206" mimic_vel="|JIndex-P 1">
+		<Body>Index-M</Body>
+	   	<Body>Index-D</Body>
+	   	<offsetfrom>Index-D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>	
+	 
+
+	 
+	<!-- Thumb -->   		
+	<Body name="Thumb-MCP" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.0067 0.0905 0.024</Translation> 
+	   	<rotationaxis>1 0 0 90</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>Modelo_B/Dedo_Pulgar/Metacarpiano+Tapa_DEVALHAND2_ModeloB.ply 0.001</data> 
+	      	<Render>Modelo_B/Dedo_Pulgar/Metacarpiano+Tapa_DEVALHAND2_ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JThumb-MCP" enable="true">
+		<Body>Thumb-MCP</Body>
+	   	<Body>handbase</Body>
+	   	<offsetfrom>Thumb-MCP</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 -1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+	
+	<Body name="Thumb-P" type="dynamic"> 
+		<offsetfrom>Thumb-MCP</offsetfrom>
+		<Translation>0.00462 -0.0675 0.03282</Translation> 
+	   	<rotationaxis>0 1 0 -90</rotationaxis>
+	   	<rotationaxis>1 0 0 -67.88</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>Modelo_B/Dedo_Pulgar/Falange_Proximal_Pulgar_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render>Modelo_B/Dedo_Pulgar/Falange_Proximal_Pulgar_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JThumb-P" enable="true">
+		<Body>Thumb-MCP</Body>
+	   	<Body>Thumb-P</Body>
+	   	<offsetfrom>Thumb-P</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Thumb-D" type="dynamic"> 
+		<offsetfrom>Thumb-P</offsetfrom>
+		<Translation>0.0 -0.034 0.0</Translation> 
+	   	<rotationaxis>0 1 0 0</rotationaxis>
+        <rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data>Modelo_B/Dedo_Pulgar/Falange_Distal_Pulgar_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render>Modelo_B/Dedo_Pulgar/Falange_Distal_Pulgar_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JThumb-D" enable="false" mimic_pos="JThumb-P" mimic_vel="|JThumb-P 1">
+		<Body>Thumb-P</Body>
+	   	<Body>Thumb-D</Body>
+	   	<offsetfrom>Thumb-D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>	 	 
+
+	<!-- Middle -->   	
+	<Body name="Middle-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.0 0.0 0.03585</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Medio/Falange_Proximal_Medio_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Medio/Falange_Proximal_Medio_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JMiddle-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Middle-P</Body>
+	   	<offsetfrom>Middle-P</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+ 	
+ 	<Body name="Middle-M" type="dynamic"> 
+		<offsetfrom>Middle-P</offsetfrom>
+		<Translation>0.0 -0.045 0.00</Translation> 
+	   	<rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Medio/Falange_Medial_Medio_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Medio/Falange_Medial_Medio_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JMiddle-M">
+		<Body>Middle-M</Body>
+	   	<Body>Middle-P</Body>
+	   	<offsetfrom>Middle-M</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 -1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Middle-D" type="dynamic"> 
+		<offsetfrom>Middle-M</offsetfrom>
+		<Translation>0.0 -0.025 0.00</Translation> 
+	   	<rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Medio/Falange_Distal_Medio_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Medio/Falange_Distal_Medio_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JMiddle-D" enable="false" mimic_pos="JMiddle-M" mimic_vel="|JMiddle-M 1">
+		<Body>Middle-M</Body>
+	   	<Body>Middle-D</Body>
+	   	<offsetfrom>Middle-D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>	
+
+<!-- Ring -->   	
+	<Body name="Ring-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.0 0.0 0.06017</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Anular/Falange_Proximal_Anular_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Anular/Falange_Proximal_Anular_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JRing-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Ring-P</Body>
+	   	<offsetfrom>Ring-P</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Ring-M" type="dynamic"> 
+		<offsetfrom>Ring-P</offsetfrom>
+		<Translation>0.0 -0.042 0.00</Translation> 
+	   	<rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Anular/Falange_Medial_Anular_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Anular/Falange_Medial_Anular_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JRing-M">
+		<Body>Ring-M</Body>
+	   	<Body>Ring-P</Body>
+	   	<offsetfrom>Ring-M</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 -1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Ring-D" type="dynamic"> 
+		<offsetfrom>Ring-M</offsetfrom>
+		<Translation>0.0 -0.022 0.00</Translation> 
+	   	<rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Anular/Falange_Distal_Anular_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Anular/Falange_Distal_Anular_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JRing-D" enable="false" mimic_pos="JRing-M" mimic_vel="|JRing-M 1">
+		<Body>Ring-M</Body>
+	   	<Body>Ring-D</Body>
+	   	<offsetfrom>Ring-D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+<!-- Little -->   	
+	<Body name="Little-P" type="dynamic"> 
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>0.0 0.0 0.08363</Translation> 
+	   	<rotationaxis>0 0 1 0</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Menique/Falange_Proximal_Menique_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Menique/Falange_Proximal_Menique_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JLittle-P" enable="true">
+		<Body>handbase</Body>
+	   	<Body>Little-P</Body>
+	   	<offsetfrom>Little-P</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Little-M" type="dynamic"> 
+		<offsetfrom>Little-P</offsetfrom>
+		<Translation>0.0 -0.030 0.00</Translation> 
+	   	<rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Menique/Falange_Medial_Menique_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Menique/Falange_Medial_Menique_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JLittle-M">
+		<Body>Little-M</Body>
+	   	<Body>Little-P</Body>
+	   	<offsetfrom>Little-M</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 -1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+
+ 	<Body name="Little-D" type="dynamic"> 
+		<offsetfrom>Little-M</offsetfrom>
+		<Translation>0.0 -0.014 0.00</Translation> 
+	   	<rotationaxis>0 0 1 5</rotationaxis>
+	   	<Geom type="trimesh" modifiable="false"> 
+    		<data> Modelo_B/Dedo_Menique/Falange_Distal_Menique_DEVALHAND2-ModeloB.ply 0.001</data> 
+	      	<Render> Modelo_B/Dedo_Menique/Falange_Distal_Menique_DEVALHAND2-ModeloB.ply 0.001</Render> 
+	    </Geom> 
+  	</Body> 
+	<Joint type="hinge" name="JLittle-D" enable="false" mimic_pos="JLittle-M" mimic_vel="|JLittle-M 1">
+		<Body>Little-M</Body>
+	   	<Body>Little-D</Body>
+	   	<offsetfrom>Little-D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg> 
+		<axis>0 0 1</axis> 
+		<maxvel>1</maxvel>
+	 </Joint>
+		 
+</KinBody>

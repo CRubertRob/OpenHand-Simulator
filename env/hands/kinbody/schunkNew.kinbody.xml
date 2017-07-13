@@ -1,0 +1,352 @@
+<KinBody name="SchunkHand">
+    	<!--rotationaxis> 0 0 1 45 </rotationaxis-->
+        
+			<Body name="hand_base">
+				<Geom type="box">
+					<extents>0.000001 0.000001 0.000001</extents>
+				</Geom>
+			</Body>
+	
+	        <Body name="root" type="dynamic">
+				<offsetfrom>hand_base</offsetfrom>
+				<translation>0 0 0</translation>
+		        <Geom type="trimesh" >
+		                <data>modelsNew/palm.wrl</data>
+		                <render>modelsNew/palm.wrl</render>
+		        </Geom>
+	        </Body>    
+	       <Joint name="hand_base_root" enable="false">
+				<Body>hand_base</Body>
+				<Body>root</Body>
+				<limitsdeg>0 0</limitsdeg>
+			</Joint>
+			
+			<!--FINGER A-->
+		     <Body name="A1_Link" type="dynamic">
+				<offsetfrom>root</offsetfrom>
+				<translation>0 0 0.0745</translation>
+				<translation>0.0190526 -0.033 0</translation>
+				<rotationaxis> 0 0 1 180</rotationaxis>
+		        <Geom type="trimesh" >
+		                <data>modelsNew/knuckle.wrl</data>
+		                <render>modelsNew/knuckle.wrl</render>
+		        </Geom>
+		        <mass>
+			        	<total>0.1</total>
+			    </mass>
+       		 </Body>	 	     
+	 	 	<Joint name="A1_Joint">
+				<body>root</body>
+				<body>A1_Link</body>
+				<offsetfrom>A1_Link</offsetfrom>
+				<anchor>0 0 0</anchor>
+				<axis>0 0 -1</axis>
+				<limitsdeg>0.0 90.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			<Body name="A2_Link" type="dynamic">
+	        	<offsetfrom>A1_Link</offsetfrom>
+				<translation>0 0 0.0165</translation>
+				<rotationaxis> 0 1 0 -90</rotationaxis>
+		        <Geom type="trimesh" >
+	                <data>modelsNew/finger.wrl</data>
+	                <render>modelsNew/finger.wrl</render>
+		        </Geom>
+		        <mass>
+		        	<total>0.1</total>
+		        </mass>
+	        </Body>
+	       	<Joint name="A2_Joint">
+				<body>A1_Link</body>
+				<body>A2_Link</body>
+				<offsetfrom>A1_Link</offsetfrom>
+				<anchor>0 0 0.0165</anchor>
+				<axis>0 1 0</axis>
+				<limitsdeg>0.0 180.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			 <Body name="A3_Link" type="dynamic">
+	        	<offsetfrom>A2_Link</offsetfrom>
+	        	<translation>0 0 0.0865</translation>
+		        <Geom type="trimesh" >
+	                <data>modelsNew/finger_tip.wrl</data>
+	                <render>modelsNew/finger_tip.wrl</render>
+		        </Geom>
+		       	<mass>
+		        	<total>0.1</total>
+		        </mass>
+	        </Body>
+	        <Joint name="A3_Joint">
+				<body>A2_Link</body>
+				<body>A3_Link</body>
+				<offsetfrom>A2_Link</offsetfrom>
+				<anchor>0 0 0.0865</anchor>
+				<axis>0 1 0</axis>
+				<limitsdeg>0 90.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			
+			<!--FINGER B-->
+			<Body name="B1_Link" type="dynamic">
+				<offsetfrom>root</offsetfrom>
+				<translation>0 0 0.0745</translation>
+				<translation>-0.03811 0 0</translation>
+		        <Geom type="trimesh" >
+		                <data>modelsNew/knuckle.wrl</data>
+		                <render>modelsNew/knuckle.wrl</render>
+		        </Geom>
+		        <mass>
+			        	<total>0.1</total>
+			    </mass>
+       		 </Body>	 	     
+	 	 	<Joint name="B1_Joint"  enable="false">
+				<body>root</body>
+				<body>B1_Link</body>
+				<offsetfrom>B1_Link</offsetfrom>
+				<anchor>0 0 0</anchor>
+				<axis>0 0 -1</axis>
+				<limitsdeg>0.0 0.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>		
+			<Body name="B2_Link" type="dynamic">
+	        	<offsetfrom>B1_Link</offsetfrom>
+				<translation>0 0 0.0165</translation>
+				<rotationaxis> 0 1 0 -90</rotationaxis>
+		        <Geom type="trimesh" >
+	                <data>modelsNew/finger.wrl</data>
+	                <render>modelsNew/finger.wrl</render>
+		        </Geom>
+		        <mass>
+		        	<total>0.1</total>
+		        </mass>
+	        </Body>			
+			<Joint name="B2_Joint">
+				<body>B1_Link</body>
+				<body>B2_Link</body>
+				<offsetfrom>B1_Link</offsetfrom>
+				<anchor>0 0 0.0165</anchor>
+				<axis>0 1 0</axis>
+				<limitsdeg>0.0 180.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			 <Body name="B3_Link" type="dynamic">
+	        	<offsetfrom>B2_Link</offsetfrom>
+	        	<translation>0 0 0.0865</translation>
+		        <Geom type="trimesh" >
+	                <data>modelsNew/finger_tip.wrl</data>
+	                <render>modelsNew/finger_tip.wrl</render>
+		        </Geom>
+		       	<mass>
+		        	<total>0.1</total>
+		        </mass>
+	        </Body>
+	        <Joint name="B3_Joint">
+				<body>B2_Link</body>
+				<body>B3_Link</body>
+				<offsetfrom>B2_Link</offsetfrom>
+				<anchor>0 0 0.0865</anchor>
+				<axis>0 1 0</axis>
+				<limitsdeg>0 90.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			
+			<!--FINGER C-->
+		     <Body name="C1_Link" type="dynamic">
+				<offsetfrom>root</offsetfrom>
+				<translation>0 0 0.0745</translation>
+				<translation>0.0190526 0.033 0</translation>
+				<rotationaxis> 0 0 1 180</rotationaxis>
+		        <Geom type="trimesh" >
+		                <data>modelsNew/knuckle.wrl</data>
+		                <render>modelsNew/knuckle.wrl</render>
+		        </Geom>
+		        <mass>
+			        	<total>0.1</total>
+			    </mass>
+       		 </Body>	 	     
+	        <Joint name="C1_Joint" enable="false" mimic_pos="A1_Joint" mimic_vel="|A1_Joint 1" mimic_accel="|A1_Joint 0">
+				<body>root</body>
+				<body>C1_Link</body>
+				<offsetfrom>C1_Link</offsetfrom>
+				<anchor>0 0 0</anchor>
+				<axis>0 0 1</axis>
+				<limitsdeg>0.0 90.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			<Body name="C2_Link" type="dynamic">
+	        	<offsetfrom>C1_Link</offsetfrom>
+				<translation>0 0 0.0165</translation>
+				<rotationaxis> 0 1 0 -90</rotationaxis>
+		        <Geom type="trimesh" >
+	                <data>modelsNew/finger.wrl</data>
+	                <render>modelsNew/finger.wrl</render>
+		        </Geom>
+		        <mass>
+		        	<total>0.1</total>
+		        </mass>
+	        </Body>
+	       	<Joint name="C2_Joint">
+				<body>C1_Link</body>
+				<body>C2_Link</body>
+				<offsetfrom>C1_Link</offsetfrom>
+				<anchor>0 0 0.0165</anchor>
+				<axis>0 1 0</axis>
+				<limitsdeg>0.0 180.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			 <Body name="C3_Link" type="dynamic">
+	        	<offsetfrom>C2_Link</offsetfrom>
+	        	<translation>0 0 0.0865</translation>
+		        <Geom type="trimesh" >
+	                <data>modelsNew/finger_tip.wrl</data>
+	                <render>modelsNew/finger_tip.wrl</render>
+		        </Geom>
+		       	<mass>
+		        	<total>0.1</total>
+		        </mass>
+	        </Body>
+	        <Joint name="C3_Joint">
+				<body>C2_Link</body>
+				<body>C3_Link</body>
+				<offsetfrom>C2_Link</offsetfrom>
+				<anchor>0 0 0.0865</anchor>
+				<axis>0 1 0</axis>
+				<limitsdeg>0 90.0</limitsdeg>
+				<speed>0.4</speed>
+				<acceleration>100000</acceleration>
+				<maxtorque>550</maxtorque>
+			</Joint>
+			
+	    	<!-- Tactile Sensors -->   
+		    <KinBody>
+		        <KinBody>
+	                <Body name="tactile_A3" type="dynamic">
+	                <offsetfrom>A3_Link</offsetfrom>
+	                <rotationaxis>0 0 1 90</rotationaxis>
+	                <rotationaxis>1 0  0 180</rotationaxis>
+	               	<rotationaxis>0 1 0 3.9</rotationaxis>
+	                <translation>0.0056 0 0.047</translation>
+	                <Geom type="trimesh" modifiable="false">
+	                    <data>models/gridCurve_crop.wrl 0.001</data>
+	                    <render>models/gridCurve_crop.wrl 0.001</render>
+	                </Geom>
+	                </Body>
+		        </KinBody>
+		        <joint name="tatile_A3" type="hinge" enable="false">
+	                <body>A3_Link</body>
+	                <body>tactile_A3</body>
+	                <limitsdeg>0 0</limitsdeg>
+		        </joint>
+			</KinBody>			
+		    <KinBody>
+			    <KinBody>
+		                <Body name="tactile_B3" type="dynamic">
+		                <offsetfrom>B3_Link</offsetfrom>
+		                <rotationaxis>0 0 1 90</rotationaxis>
+		                <rotationaxis>1 0  0 180</rotationaxis>
+		               	<rotationaxis>0 1 0 3.9</rotationaxis>
+		                <translation>0.0056 0 0.047</translation>
+		                <Geom type="trimesh" modifiable="false">
+		                    <data>models/gridCurve_crop.wrl 0.001</data>
+		                    <render>models/gridCurve_crop.wrl 0.001</render>
+		                </Geom>
+		                </Body>
+			        </KinBody>
+			        <joint name="tatile_B3" type="hinge" enable="false">
+		                <body>B3_Link</body>
+		                <body>tactile_B3</body>
+		                <limitsdeg>0 0</limitsdeg>
+			        </joint>
+			</KinBody>			
+			<KinBody>
+				<KinBody>
+	                <Body name="tactile_C3" type="dynamic">
+	                <offsetfrom>C3_Link</offsetfrom>
+	                <rotationaxis>0 0 1 90</rotationaxis>
+	                <rotationaxis>1 0  0 180</rotationaxis>
+	               	<rotationaxis>0 1 0 3.9</rotationaxis>
+	                <translation>0.0056 0 0.047</translation>
+	                <Geom type="trimesh" modifiable="false">
+	                    <data>models/gridCurve_crop.wrl 0.001</data>
+	                    <render>models/gridCurve_crop.wrl 0.001</render>
+	                </Geom>
+	                </Body>
+		        </KinBody>
+		        <joint name="tatile_C3" type="hinge" enable="false">
+	                <body>C3_Link</body>
+	                <body>tactile_C3</body>
+	                <limitsdeg>0 0</limitsdeg>
+		        </joint>
+			</KinBody>		
+			
+			<KinBody>
+				<KinBody>
+		                <Body name="tactile_A2" type="dynamic">
+		                <offsetfrom>A2_Link</offsetfrom>
+		               	<rotationaxis>0 0 1 -90</rotationaxis>
+		                <translation>0.0155 0 0.0435</translation>
+		                <Geom type="trimesh" modifiable="false">
+		                        <data>modelsNew/gridPlain.wrl 0.01</data>
+		                        <render>modelsNew/gridPlain.wrl 0.01</render>
+		                </Geom>
+		                </Body>
+		        </KinBody>
+		        <joint name="tatile_A2" type="hinge" enable="false">
+		                <body>A2_Link</body>
+		                <body>tactile_A2</body>
+		                <limitsdeg>0 0</limitsdeg>
+		        </joint>
+		</KinBody>	
+		<KinBody>
+				<KinBody>
+		                <Body name="tactile_B2" type="dynamic">
+		                <offsetfrom>B2_Link</offsetfrom>
+		               	<rotationaxis>0 0 1 -90</rotationaxis>
+		                <translation>0.0155 0 0.0435</translation>
+		                <Geom type="trimesh" modifiable="false">
+		                        <data>modelsNew/gridPlain.wrl 0.01</data>
+		                        <render>modelsNew/gridPlain.wrl 0.01</render>
+		                </Geom>
+		                </Body>
+		        </KinBody>
+		        <joint name="tatile_B2" type="hinge" enable="false">
+		                <body>B2_Link</body>
+		                <body>tactile_B2</body>
+		                <limitsdeg>0 0</limitsdeg>
+		        </joint>
+		</KinBody>
+		<KinBody>
+				<KinBody>
+		                <Body name="tactile_C2" type="dynamic">
+		                <offsetfrom>C2_Link</offsetfrom>
+		               	<rotationaxis>0 0 1 -90</rotationaxis>
+		                <translation>0.0155 0 0.0435</translation>
+		                <Geom type="trimesh" modifiable="false">
+		                        <data>modelsNew/gridPlain.wrl 0.01</data>
+		                        <render>modelsNew/gridPlain.wrl 0.01</render>
+		                </Geom>
+		                </Body>
+		        </KinBody>
+		        <joint name="tatile_C2" type="hinge" enable="false">
+		                <body>C2_Link</body>
+		                <body>tactile_C2</body>
+		                <limitsdeg>0 0</limitsdeg>
+		        </joint>
+		</KinBody>
+</KinBody>

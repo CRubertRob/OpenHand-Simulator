@@ -1,0 +1,705 @@
+<KinBody name="ManoImma">
+	<Body name="handbase" type="dynamic">		
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/8.STL 1</data>
+			<Render>mano_imma/8.STL 1</Render>
+		</Geom>
+	</Body>
+
+<!-- Index--> 
+
+	<Body name="Index9-8" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>		
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<rotationaxis>0 1 0 180.0</rotationaxis>
+		<rotationaxis>1 0 0 -5.0</rotationaxis>
+		<Translation>0.0 -0.081 0.02</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-8.STL 1</data>
+			<Render>mano_imma/9-8.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JIP">
+		<Body>handbase</Body>
+		<Body>Index9-8</Body>
+		<offsetfrom>Index9-8</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Index2-1" type="dynamic">
+		<offsetfrom>Index9-8</offsetfrom>
+		<rotationaxis>0 1 0 -90.0</rotationaxis>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<Translation>-0.006 0 0.0003</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/2-1.STL 1</data>
+			<Render>mano_imma/2-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JIP-Fake" enable="false">
+		<Body>Index9-8</Body>
+		<Body>Index2-1</Body>
+		<offsetfrom>Index9-8</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>1 0 0</axis>
+	</Joint>
+	
+	<Body name="Index9-1" type="dynamic">
+		<offsetfrom>Index2-1</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0 0.041 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-1.STL 1</data>
+			<Render>mano_imma/9-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JIPM">
+		<Body>Index2-1</Body>
+		<Body>Index9-1</Body>
+		<offsetfrom>Index9-1</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Index2-2" type="dynamic">
+		<offsetfrom>Index9-1</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 -90</rotationaxis>
+		<Translation>0.022 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/2-2.STL 1</data>
+			<Render>mano_imma/2-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JIPM-Fake" enable="false">
+		<Body>Index9-1</Body>
+		<Body>Index2-2</Body>		
+		<offsetfrom>Index9-1</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Index9-1D" type="dynamic">
+		<offsetfrom>Index2-2</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.005 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-1.STL 1</data>
+			<Render>mano_imma/9-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JIMD">
+		<Body>Index2-2</Body>
+		<Body>Index9-1D</Body>
+		<offsetfrom>Index9-1D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	<Body name="Index2-3" type="dynamic">
+		<offsetfrom>Index9-1D</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>0.005 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/2-3.STL 1</data>
+			<Render>mano_imma/2-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JIMD-Fake" enable="false">
+		<Body>Index9-1D</Body>
+		<Body>Index2-3</Body>		
+		<offsetfrom>Index9-1D</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Index6-2" type="dynamic">
+		<offsetfrom>Index2-3</offsetfrom>
+		<rotationaxis>1 0 0 0.0</rotationaxis>
+		<rotationaxis>0 1 0 0</rotationaxis>
+		<Translation>-0.0001 -0.015 -0.0028</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-2.STL 1</data>
+			<Render>mano_imma/6-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JItactile-Fake" enable="false">
+		<Body>Index6-2</Body>
+		<Body>Index9-1D</Body>		
+		<offsetfrom>Index6-2</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+<!-- Middle--> 
+
+	<Body name="Middle9-7" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<rotationaxis>0 1 0 180.0</rotationaxis>		
+		<Translation>0.0 -0.076 -0.0023</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-7.STL 1</data>
+			<Render>mano_imma/9-7.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMP">
+		<Body>handbase</Body>
+		<Body>Middle9-7</Body>
+		<offsetfrom>Middle9-7</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Middle3-1" type="dynamic">
+		<offsetfrom>Middle9-7</offsetfrom>
+		<rotationaxis>0 1 0 -90.0</rotationaxis>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<Translation>-0.048 0 0.000</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/3-1.STL 1</data>
+			<Render>mano_imma/3-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMP-Fake" enable="false">
+		<Body>Middle9-7</Body>
+		<Body>Middle3-1</Body>
+		<offsetfrom>Middle9-7</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>1 0 0</axis>
+	</Joint>
+	
+	<Body name="Middle9-1" type="dynamic">
+		<offsetfrom>Middle3-1</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.005 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-1.STL 1</data>
+			<Render>mano_imma/9-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMPM">
+		<Body>Middle3-1</Body>
+		<Body>Middle9-1</Body>
+		<offsetfrom>Middle9-1</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Middle3-2" type="dynamic">
+		<offsetfrom>Middle9-1</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 -90</rotationaxis>
+		<Translation>0.026 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/3-2.STL 1</data>
+			<Render>mano_imma/3-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMPM-Fake" enable="false">
+		<Body>Middle9-1</Body>
+		<Body>Middle3-2</Body>		
+		<offsetfrom>Middle9-1</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Middle9-9" type="dynamic">
+		<offsetfrom>Middle3-2</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.005 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-9.STL 1</data>
+			<Render>mano_imma/9-9.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMMD">
+		<Body>Middle3-2</Body>
+		<Body>Middle9-9</Body>
+		<offsetfrom>Middle9-9</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	<Body name="Middle3-3" type="dynamic">
+		<offsetfrom>Middle9-9</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>0.005 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/3-3.STL 1</data>
+			<Render>mano_imma/3-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMMD-Fake" enable="false">
+		<Body>Middle9-9</Body>
+		<Body>Middle3-3</Body>		
+		<offsetfrom>Middle9-9</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Middle6-3" type="dynamic">
+		<offsetfrom>Middle3-3</offsetfrom>
+		<rotationaxis>1 0 0 0.0</rotationaxis>
+		<rotationaxis>0 1 0 0</rotationaxis>
+		<Translation>-0.0002 -0.0163 -0.003</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-3.STL 1</data>
+			<Render>mano_imma/6-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JMtactile-Fake" enable="false">
+		<Body>Middle9-9</Body>
+		<Body>Middle6-3</Body>				
+		<offsetfrom>Middle9-9</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+<!-- Ring--> 
+
+	<Body name="Ring9-5" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>
+		<rotationaxis>0 1 0 7.0</rotationaxis>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<rotationaxis>0 1 0 180.0</rotationaxis>
+		<Translation>0.0 -0.073 -0.0215</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-5.STL 1</data>
+			<Render>mano_imma/9-5.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRP">
+		<Body>handbase</Body>
+		<Body>Ring9-5</Body>
+		<offsetfrom>Ring9-5</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Ring4-1" type="dynamic">
+		<offsetfrom>Ring9-5</offsetfrom>
+		<rotationaxis>0 1 0 -90.0</rotationaxis>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<Translation>-0.0395 0 -0.0001</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/4-1.STL 1</data>
+			<Render>mano_imma/4-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRP-Fake" enable="false">
+		<Body>Ring9-5</Body>
+		<Body>Ring4-1</Body>
+		<offsetfrom>Ring9-5</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>1 0 0</axis>
+	</Joint>
+	
+	<Body name="Ring9-1" type="dynamic">
+		<offsetfrom>Ring4-1</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.005 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-1.STL 1</data>
+			<Render>mano_imma/9-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRPM">
+		<Body>Ring4-1</Body>
+		<Body>Ring9-1</Body>
+		<offsetfrom>Ring9-1</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Ring4-2" type="dynamic">
+		<offsetfrom>Ring9-1</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 -90</rotationaxis>
+		<Translation>0.024 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/4-2.STL 1</data>
+			<Render>mano_imma/4-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRPM-Fake" enable="false">
+		<Body>Ring9-1</Body>
+		<Body>Ring4-2</Body>		
+		<offsetfrom>Ring9-1</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Ring9-9" type="dynamic">
+		<offsetfrom>Ring4-2</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.005 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-9.STL 1</data>
+			<Render>mano_imma/9-9.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRMD">
+		<Body>Ring4-2</Body>
+		<Body>Ring9-9</Body>
+		<offsetfrom>Ring9-9</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	<Body name="Ring4-3" type="dynamic">
+		<offsetfrom>Ring9-9</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>0.004 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/4-3.STL 1</data>
+			<Render>mano_imma/4-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRMD-Fake" enable="false">
+		<Body>Ring9-9</Body>
+		<Body>Ring4-3</Body>		
+		<offsetfrom>Ring9-9</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Ring6-4" type="dynamic">
+		<offsetfrom>Ring4-3</offsetfrom>
+		<rotationaxis>1 0 0 0.0</rotationaxis>
+		<rotationaxis>0 1 0 0</rotationaxis>
+		<Translation>-0.0001 -0.0174 -0.0023</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-4.STL 1</data>
+			<Render>mano_imma/6-4.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JRtactile-Fake" enable="false">
+		<Body>Ring9-9</Body>
+		<Body>Ring6-4</Body>				
+		<offsetfrom>Ring9-9</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+
+<!-- Little--> 
+
+	<Body name="Little9-6" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>
+		<rotationaxis>0 1 0 15.0</rotationaxis>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<rotationaxis>0 1 0 180.0</rotationaxis>
+		<Translation>-0.0 -0.068 -0.0363</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-6.STL 1</data>
+			<Render>mano_imma/9-6.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLP">
+		<Body>handbase</Body>
+		<Body>Little9-6</Body>
+		<offsetfrom>Little9-6</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Little5-1" type="dynamic">
+		<offsetfrom>Little9-6</offsetfrom>
+		<rotationaxis>0 1 0 -90.0</rotationaxis>
+		<rotationaxis>0 0 1 90.0</rotationaxis>
+		<Translation>-0.0065 0 0.0024</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/5-1.STL 1</data>
+			<Render>mano_imma/5-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLP-Fake" enable="false">
+		<Body>Little9-6</Body>
+		<Body>Little5-1</Body>
+		<offsetfrom>Little9-6</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>1 0 0</axis>
+	</Joint>
+	
+	<Body name="Little9-2" type="dynamic">
+		<offsetfrom>Little5-1</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.032 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-2.STL 1</data>
+			<Render>mano_imma/9-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLPM">
+		<Body>Little5-1</Body>
+		<Body>Little9-2</Body>
+		<offsetfrom>Little9-2</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	<Body name="Little5-2" type="dynamic">
+		<offsetfrom>Little9-2</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 -90</rotationaxis>
+		<Translation>0.016 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/5-2.STL 1</data>
+			<Render>mano_imma/5-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLPM-Fake" enable="false">
+		<Body>Little9-2</Body>
+		<Body>Little5-2</Body>		
+		<offsetfrom>Little9-2</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Little9-10" type="dynamic">
+		<offsetfrom>Little5-2</offsetfrom>
+		<rotationaxis>1 0 0 90.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.0 0.005 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-10.STL 1</data>
+			<Render>mano_imma/9-10.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLMD">
+		<Body>Little5-2</Body>
+		<Body>Little9-10</Body>
+		<offsetfrom>Little9-10</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	<Body name="Little5-3" type="dynamic">
+		<offsetfrom>Little9-10</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>0.004 0.0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/5-3.STL 1</data>
+			<Render>mano_imma/5-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLMD-Fake" enable="false">
+		<Body>Little9-10</Body>
+		<Body>Little5-3</Body>		
+		<offsetfrom>Little9-10</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Little6-5" type="dynamic">
+		<offsetfrom>Little5-3</offsetfrom>
+		<rotationaxis>1 0 0 0.0</rotationaxis>
+		<rotationaxis>0 1 0 0</rotationaxis>
+		<Translation>-0.0001 -0.0147 -0.001</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-5.STL 1</data>
+			<Render>mano_imma/6-5.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JLtactile-Fake" enable="false">
+		<Body>Little9-10</Body>
+		<Body>Little6-5</Body>				
+		<offsetfrom>Little9-10</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+<!-- Thumb--> 
+
+	<Body name="Thumb9-4" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>0 -0.0366 0.027</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-4.STL 1</data>
+			<Render>mano_imma/9-4.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTMCP">
+		<Body>handbase</Body>
+		<Body>Thumb9-4</Body>
+		<offsetfrom>Thumb9-4</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Thumb7" type="dynamic">
+		<offsetfrom>Thumb9-4</offsetfrom>
+		<rotationaxis>1 0 0 -90.0</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>-0.0065 0 -0.004</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/7.STL 1</data>
+			<Render>mano_imma/7.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTMCP-Fake" enable="false">		
+		<Body>Thumb9-4</Body>
+		<Body>Thumb7</Body>
+		<offsetfrom>Thumb9-4</offsetfrom>
+		<limitsdeg>0 -90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Thumb9-3" type="dynamic">
+		<offsetfrom>Thumb7</offsetfrom>
+		<rotationaxis>1 0 0 45.0</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>-0.0 0.02 0.004</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-3.STL 1</data>
+			<Render>mano_imma/9-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTP">		
+		<Body>Thumb9-3</Body>
+		<Body>Thumb7</Body>
+		<offsetfrom>Thumb9-3</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 1</axis>
+	</Joint>
+	
+	<Body name="Thumb1-1" type="dynamic">
+		<offsetfrom>Thumb9-3</offsetfrom>
+		<rotationaxis>1 0 0 -90</rotationaxis>
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<Translation>0.005 0.00 0.00</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/1-1.STL 1</data>
+			<Render>mano_imma/1-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTP-Fake" enable="false">		
+		<Body>Thumb9-3</Body>
+		<Body>Thumb1-1</Body>
+		<offsetfrom>Thumb9-3</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	
+	<Body name="Thumb9-3D" type="dynamic">
+		<offsetfrom>Thumb1-1</offsetfrom>
+		<rotationaxis>1 0 0 90</rotationaxis>
+		<rotationaxis>0 0 1 90</rotationaxis>
+		<Translation>0.00 -0.0285 0.00</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/9-3.STL 1</data>
+			<Render>mano_imma/9-3.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTD">		
+		<Body>Thumb9-3D</Body>
+		<Body>Thumb1-1</Body>
+		<offsetfrom>Thumb9-3D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	
+	<Body name="Thumb1-2" type="dynamic">
+		<offsetfrom>Thumb9-3D</offsetfrom>
+		<rotationaxis>0 1 0 -90</rotationaxis>
+		<rotationaxis>0 0 1 -90</rotationaxis>
+		<Translation>-0.005 -0.0 0.00</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/1-2.STL 1</data>
+			<Render>mano_imma/1-2.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTD-Fake" enable="false">		
+		<Body>Thumb9-3D</Body>
+		<Body>Thumb1-2</Body>
+		<offsetfrom>Thumb9-3D</offsetfrom>
+		<limitsdeg>0 90</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+	
+	<Body name="Thumb6-1" type="dynamic">
+		<offsetfrom>Thumb1-2</offsetfrom>
+		<rotationaxis>0 1 0 0</rotationaxis>
+		<rotationaxis>0 0 1 0</rotationaxis>
+		<Translation>-0.0003 -0.016 -0.004</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-1.STL 1</data>
+			<Render>mano_imma/6-1.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTtactile-Fake" enable="false">		
+		<Body>Thumb6-1</Body>
+		<Body>Thumb9-3D</Body>
+		<offsetfrom>Thumb6-1</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+
+	<Body name="PalmTactile-1" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>		
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<rotationaxis>1 0 0 180</rotationaxis>
+		<Translation>0.0117 -0.0167 -0.0118</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-6.STL 1</data>
+			<Render>mano_imma/6-6.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTtactile-Fake" enable="false">		
+		<Body>PalmTactile-1</Body>
+		<Body>handbase</Body>
+		<offsetfrom>PalmTactile-1</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+
+<Body name="PalmTactile-2" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>		
+		<rotationaxis>0 1 0 90</rotationaxis>
+		<rotationaxis>1 0 0 180</rotationaxis>
+		<Translation>0.01 -0.0504 -0.0095</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-8.STL 1</data>
+			<Render>mano_imma/6-8.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTtactile-Fake" enable="false">		
+		<Body>PalmTactile-2</Body>
+		<Body>handbase</Body>
+		<offsetfrom>PalmTactile-2</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+
+<Body name="PalmTactile-3" type="dynamic">
+		<offsetfrom>Thumb7</offsetfrom>		
+		<rotationaxis>0 1 0 0</rotationaxis>
+		<rotationaxis>1 0 0 0</rotationaxis>
+		<Translation>-0.0098 0.0102 -0.01</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>mano_imma/6-7.STL 1</data>
+			<Render>mano_imma/6-7.STL 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JTtactile-Fake" enable="false">		
+		<Body>PalmTactile-3</Body>
+		<Body>Thumb7</Body>
+		<offsetfrom>PalmTactile-3</offsetfrom>
+		<limitsdeg>0 0</limitsdeg>
+		<axis>0 0 -1</axis>
+	</Joint>
+
+<!-- add adjacent links, necessary in order to prevent bogus collisions -->
+<!--   <adjacent>Finger0-0 Finger1-0</adjacent> -->
+<!--   <adjacent>Finger0-1 Finger0-2</adjacent> -->
+<!--   <adjacent>Finger1-1 Finger1-2</adjacent> -->
+<!--   <adjacent>Finger2-1 Finger2-2</adjacent> -->
+<!--   <adjacent>handbase Finger0-1</adjacent> -->
+<!--   <adjacent>handbase Finger0-2</adjacent> -->
+<!--   <adjacent>handbase Finger1-1</adjacent> -->
+<!--   <adjacent>handbase Finger1-2</adjacent> -->
+<!--   <adjacent>handbase Finger2-1</adjacent> -->
+<!--   <adjacent>handbase Finger2-2</adjacent> -->
+</KinBody>

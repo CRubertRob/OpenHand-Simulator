@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="kinbody/modelt.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>0 -0.06 0</Translation>
+    <joints>JF0-1 JF0-2 JF1-1 JF1-2 JF3-1 JF3-2 JF4-1 JF4-2</joints>
+    <closingdirection>1 1 1 1 1 1 1 1</closingdirection>
+    <direction>0 -1 0</direction>
+  </Manipulator>
+</Robot>

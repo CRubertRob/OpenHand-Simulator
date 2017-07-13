@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="./kinbody/bruno_modelo_t.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>0.0 0.0 0.0</Translation>
+    <joints> JIndex-P JThumb-MCP JThumb-P JMiddle-P JRing-P JLittle-P</joints>
+    <closingdirection> 1 1 1 1 1 1</closingdirection>
+    <direction> 1 0 0</direction>
+  </Manipulator>
+</Robot>

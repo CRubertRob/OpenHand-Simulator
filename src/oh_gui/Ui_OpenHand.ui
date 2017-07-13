@@ -1,0 +1,5885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OpenHand</class>
+ <widget class="QMainWindow" name="OpenHand">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>787</width>
+    <height>916</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OpenHand</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="teOutput">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>621</width>
+      <height>161</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbUpdateSliders">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>111</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UpdateSliders</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbSetCameraView">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SetCameraView</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbStartOpenRAVE">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>start OpenRAVE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbClearMarkers">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ClearMarkers</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>751</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_13">
+     <attribute name="title">
+      <string>Generate Grasps</string>
+     </attribute>
+     <widget class="QLabel" name="label_114">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hands</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_115">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>20</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Objects</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_116">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>270</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Standoffs</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_117">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>300</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rolls</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_118">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>330</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Delta Space</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_119">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>360</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Angle Range</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lEStandoffs">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>270</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lERolls">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>300</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lEDelta">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>330</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_120">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>270</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Maximum Grasps</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lEGrasps">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>270</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGen">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>350</y>
+        <width>131</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Generate Grasps</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lWHands">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>10</y>
+        <width>256</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="modelColumn">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lWObjects">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>10</y>
+        <width>256</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lEAngle">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>360</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_121">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>230</y>
+        <width>231</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Automatic Generation</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_122">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>420</y>
+        <width>231</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Manual Generation</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lEGrasps_2">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>310</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_123">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>310</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Experiment Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_86">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>490</y>
+        <width>51</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Object</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBGObject">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>490</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_87">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>450</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Hand</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBGPosture">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>490</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_88">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>450</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Experiment</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBGExperiment">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>450</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGHand">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>450</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGExperiment">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>450</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGPosture">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>490</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGObject">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>490</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBGHand">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>450</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_89">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>490</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Initial Posture</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGSave">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>550</y>
+        <width>131</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save Grasp</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGOverwrite">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>550</y>
+        <width>131</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Overwrite Grasp</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGClose">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>550</y>
+        <width>131</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close Fingers</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGOpen">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>550</y>
+        <width>131</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Open Fingers</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Evaluate Grasps</string>
+     </attribute>
+     <widget class="QPushButton" name="pbLoadHand">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>50</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Hand</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBSelHand">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>16</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Markers</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBRLoadMarkers">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>10</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRLoadMarkers">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>10</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Experiment</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRLoadExp">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>10</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>51</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Object</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBRLoadObject">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>90</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRLoadObject">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>90</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBRLoadExp">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>90</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Results File</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lERSaveInitial">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>90</y>
+        <width>181</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRSaveInitial">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>90</y>
+        <width>51</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRGrasp">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>140</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Evaluate Grasp</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRAll">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>140</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Evaluate All</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbRInitialPosture">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>50</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBRInitialPosture">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>50</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_46">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>50</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Initial Posture</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_55">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>370</y>
+        <width>148</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB1G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>270</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_57">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>320</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textA1G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>220</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textC2G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>420</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_58">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>148</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QA1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_60">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>270</y>
+        <width>148</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB3G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>370</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_61">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>420</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QC2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_64">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>470</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textD1G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>470</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_65">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>520</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textD2G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>520</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB2G">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>320</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_71">
+      <property name="geometry">
+       <rect>
+        <x>144</x>
+        <y>190</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Quality Results</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_72">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>470</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textD1av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>470</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB3av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>370</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_73">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>520</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB1av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>270</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_78">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>370</y>
+        <width>148</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB3</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_80">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>420</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QC2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textC2av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>420</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_81">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>270</y>
+        <width>148</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_82">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>320</y>
+        <width>149</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB2</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textA1av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>220</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textD2av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>520</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_83">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>220</y>
+        <width>148</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QA1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_84">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>190</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Average Values</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB2av">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>320</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_85">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>190</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Standard Deviations</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB2std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>320</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textA1std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>220</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB3std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>370</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textD2std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>520</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textD1std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>470</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textC2std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>420</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textB1std">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>270</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Benchmark Hands</string>
+     </attribute>
+     <widget class="QComboBox" name="cBBenchExp">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbBenchEval1">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>10</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Evalue</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Experiment</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_45">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>68</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QA1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_66">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>98</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_67">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>188</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QC2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_68">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>128</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_69">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>158</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB3</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_70">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>218</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD1</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBBenchHand2">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>300</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_62">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>300</y>
+        <width>51</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hand 2</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbBenchEval2">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>300</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Evalue</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC1_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>71</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC6_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>490</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC3_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>130</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC4_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>160</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC5_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>190</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC3_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>400</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC5_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>460</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC2_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>100</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC2_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>370</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC6_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>220</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC4_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>430</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC1_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>340</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC6_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>490</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC5_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>460</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC6_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>220</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC3_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>400</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC3_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>130</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC1_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>340</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC2_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>100</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC5_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>190</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC4_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>160</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC4_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>430</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC1_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>70</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC2_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>370</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cBBenchHand1">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>10</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_90">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>51</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hand 1</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbBenchExp">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>10</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_91">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>248</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD2</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC7_1">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>250</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC7_1">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>250</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_79">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB3</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_74">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>460</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QC2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_75">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>400</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_76">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>490</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_92">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>520</y>
+        <width>111</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QD2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_77">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>121</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QB1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_63">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>QA1</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pBQC7_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>520</y>
+        <width>471</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QProgressBar::chunk {
+     background-color: white
+ }
+ QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+     text-align: center;
+	 background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 red, stop: 0.4 yellow, stop:1 green);
+ }
+
+</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="invertedAppearance">
+       <bool>true</bool>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tLQC7_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>520</y>
+        <width>66</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Human Hand</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>751</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Arm</string>
+       </attribute>
+       <widget class="QFrame" name="frame_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>721</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>240</y>
+           <width>701</width>
+           <height>91</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Wrist</string>
+         </property>
+         <widget class="QLabel" name="label_10">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>51</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>flex-ext</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_psi_fe_w">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>10</y>
+            <width>530</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-60</number>
+          </property>
+          <property name="maximum">
+           <number>45</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_psi_fe_w">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>20</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>-60</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_psi_abd_w">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>50</y>
+            <width>530</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-85</number>
+          </property>
+          <property name="maximum">
+           <number>85</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_11">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>51</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>abd-add</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_psi_abd_w">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>60</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>-85</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_psi_fe_w">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>20</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>45</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_psi_abd_w">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>60</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>85</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_psi_fe_w">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>19</y>
+            <width>40</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_psi_abd_w">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>50</y>
+            <width>40</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>701</width>
+           <height>91</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Elbow</string>
+         </property>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>51</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>flex-ext</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_psi_fe_e">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>10</y>
+            <width>539</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>145</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_psi_fe_e">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>20</y>
+            <width>20</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_psi_ps_e">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>50</y>
+            <width>539</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>175</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>51</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>pron-sup</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_psi_ps_e">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>60</y>
+            <width>20</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_psi_fe_e">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>20</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>145</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_psi_ps_e">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>60</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>175</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_psi_fe_e">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>10</y>
+            <width>35</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_psi_ps_e">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>50</y>
+            <width>35</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>701</width>
+           <height>141</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Shoulder</string>
+         </property>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>30</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>fi</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_fi_s">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>20</y>
+            <width>540</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-50</number>
+          </property>
+          <property name="maximum">
+           <number>180</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_fi_s">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>-50</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_theta_s">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>60</y>
+            <width>540</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-180</number>
+          </property>
+          <property name="maximum">
+           <number>180</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>70</y>
+            <width>31</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>theta</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_theta_s">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>70</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>-180</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_fi_s">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>30</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>180</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_theta_s">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>70</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>180</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_max_psi_s">
+          <property name="geometry">
+           <rect>
+            <x>630</x>
+            <y>110</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>180</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>110</y>
+            <width>31</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>psi</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_min_psi_s">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>110</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>-30</string>
+          </property>
+         </widget>
+         <widget class="QSlider" name="slider_psi_s">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>100</y>
+            <width>540</width>
+            <height>29</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>-30</number>
+          </property>
+          <property name="maximum">
+           <number>180</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance">
+           <bool>false</bool>
+          </property>
+          <property name="invertedControls">
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_fi_s">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>25</y>
+            <width>35</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_theta_s">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>66</y>
+            <width>35</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="text_psi_s">
+          <property name="geometry">
+           <rect>
+            <x>660</x>
+            <y>106</y>
+            <width>35</width>
+            <height>23</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Hand</string>
+       </attribute>
+       <widget class="QFrame" name="frame_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>731</width>
+          <height>511</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>711</width>
+           <height>511</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QGroupBox" name="groupBox_8">
+            <property name="title">
+             <string>Thumb</string>
+            </property>
+            <widget class="QSlider" name="slider_flexCMCthumb">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>80</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-25</number>
+             </property>
+             <property name="maximum">
+              <number>35</number>
+             </property>
+             <property name="sliderPosition">
+              <number>0</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_abdCMCthumb">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>40</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-30</number>
+             </property>
+             <property name="maximum">
+              <number>60</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexMCPthumb">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>220</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-10</number>
+             </property>
+             <property name="maximum">
+              <number>80</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_abdMCPthumb">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-30</number>
+             </property>
+             <property name="maximum">
+              <number>60</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexIPthumb">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>320</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-15</number>
+             </property>
+             <property name="maximum">
+              <number>80</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_2">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>63</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-30</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_3">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>63</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>60</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_4">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>80</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>35</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_5">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>140</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-25</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_6">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>60</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_7">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-30</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_8">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>80</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_9">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>280</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-10</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_10">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>320</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>80</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_11">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>380</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-15</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>20</y>
+               <width>41</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>CMC</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_6">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>160</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>MCP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_12">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>300</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>IP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="Line" name="line_5">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>150</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="Line" name="line_6">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>290</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="Line" name="line_10">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>390</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_abdCMCthumb">
+             <property name="geometry">
+              <rect>
+               <x>94</x>
+               <y>43</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexCMCthumb">
+             <property name="geometry">
+              <rect>
+               <x>94</x>
+               <y>90</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_abdMCPthumb">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>183</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexMCPthumb">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>230</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexIPthumb">
+             <property name="geometry">
+              <rect>
+               <x>94</x>
+               <y>330</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_9">
+            <property name="title">
+             <string>Index</string>
+            </property>
+            <widget class="Line" name="line_8">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>290</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_13">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>300</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>PIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexMCPindex">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>220</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_14">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>42</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_17">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>280</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="Line" name="line_7">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>150</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_14">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>160</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>MCP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_15">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>320</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_abdMCPindex">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-15</number>
+             </property>
+             <property name="maximum">
+              <number>42</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_12">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-15</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_13">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexPIPindex">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>320</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_16">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>380</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_15">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>400</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>DIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_18">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>420</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexDIPindex">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>420</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-10</number>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="Line" name="line_9">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>390</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_19">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>480</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-10</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexPIPindex">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>330</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexMCPindex">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>230</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_abdMCPindex">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>183</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexDIPindex">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>420</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_10">
+            <property name="title">
+             <string>Middle</string>
+            </property>
+            <widget class="QLabel" name="label_min_fi_s_31">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexMCPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>230</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_abdMCPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>183</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_30">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>280</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_28">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-8</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_abdMCPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-8</number>
+             </property>
+             <property name="maximum">
+              <number>35</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_29">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>35</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexMCPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>220</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="Line" name="line_14">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>150</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_19">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>160</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>MCP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_35">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>480</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-10</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_20">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>300</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>PIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="Line" name="line_16">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>390</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_34">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>380</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexPIPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>320</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="Line" name="line_15">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>290</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_21">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>400</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>DIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexDIPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>420</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-10</number>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_33">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>320</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexPIPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>330</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_32">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>420</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexDIPmiddle">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>420</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_12">
+            <property name="title">
+             <string>Ring</string>
+            </property>
+            <widget class="QLabel" name="label_min_fi_s_69">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>320</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_abdMCPring">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>183</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_33">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>300</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>PIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_63">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>420</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="Line" name="line_31">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>150</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="Line" name="line_32">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>390</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_64">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>20</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_65">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexPIPring">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>320</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_66">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>280</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexMCPring">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>220</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_32">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>160</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>MCP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexPIPring">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>330</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_68">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-14</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexDIPring">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>420</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="Line" name="line_30">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>290</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_31">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>400</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>DIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexMCPring">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>230</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexDIPring">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>420</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-20</number>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_abdMCPring">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-14</number>
+             </property>
+             <property name="maximum">
+              <number>20</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_67">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>480</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-20</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_62">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>380</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexCMCring">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>70</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_78">
+             <property name="geometry">
+              <rect>
+               <x>26</x>
+               <y>120</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_79">
+             <property name="geometry">
+              <rect>
+               <x>26</x>
+               <y>60</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>15</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexCMCring">
+             <property name="geometry">
+              <rect>
+               <x>36</x>
+               <y>60</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>15</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_37">
+             <property name="geometry">
+              <rect>
+               <x>36</x>
+               <y>20</y>
+               <width>41</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>CMC</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_11">
+            <property name="title">
+             <string>Small</string>
+            </property>
+            <widget class="QLabel" name="label_min_fi_s_77">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>320</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexMCPsmall">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>230</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="Line" name="line_33">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>290</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_75">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>480</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-30</string>
+             </property>
+            </widget>
+            <widget class="Line" name="line_35">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>390</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_34">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>400</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>DIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="Line" name="line_34">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>150</y>
+               <width>131</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexDIPsmall">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>420</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_72">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>19</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_71">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>420</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_76">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>205</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>-40</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexMCPsmall">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>220</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_73">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>220</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>90</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_36">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>300</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>PIP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_35">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>160</y>
+               <width>31</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>MCP</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexDIPsmall">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>420</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-30</number>
+             </property>
+             <property name="maximum">
+              <number>90</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexPIPsmall">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>330</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_abdMCPsmall">
+             <property name="geometry">
+              <rect>
+               <x>93</x>
+               <y>183</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_70">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>380</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_74">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>280</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexPIPsmall">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>320</y>
+               <width>31</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_abdMCPsmall">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>180</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>-40</number>
+             </property>
+             <property name="maximum">
+              <number>19</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="text_flexCMCsmall">
+             <property name="geometry">
+              <rect>
+               <x>94</x>
+               <y>70</y>
+               <width>35</width>
+               <height>23</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_83">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>60</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>30</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_38">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>20</y>
+               <width>41</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="text">
+              <string>CMC</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_min_fi_s_82">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>120</y>
+               <width>21</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+            <widget class="QSlider" name="slider_flexCMCsmall">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>60</y>
+               <width>29</width>
+               <height>71</height>
+              </rect>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>30</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>Posture</string>
+       </attribute>
+       <widget class="QTextEdit" name="tePosture">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>591</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbGetPosture">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>210</y>
+          <width>111</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Get Posture</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_40">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>300</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Initial Posture</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lEsaveInitial">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>300</y>
+          <width>181</width>
+          <height>27</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbSaveInitial">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>300</y>
+          <width>51</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_41">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>340</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>End Posture</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lEsaveEnd">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>340</y>
+          <width>181</width>
+          <height>27</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbSaveEnd">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>340</y>
+          <width>51</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_43">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>300</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Initial Posture</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_44">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>340</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>End Posture</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbInitialPosture">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>300</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBInitialPosture">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>300</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbEndPosture">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>340</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBEndPosture">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>340</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbMarkers">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>260</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBMarkers">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>260</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_56">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>260</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load Markers</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_30">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>260</y>
+          <width>51</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Object</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBObject">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>260</y>
+          <width>181</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbObject">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>260</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_7">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>20</y>
+          <width>111</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_22">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>91</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Grasp Fingers</string>
+         </property>
+        </widget>
+        <widget class="QFrame" name="frame_8">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>111</width>
+           <height>161</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QCheckBox" name="ckBThumb">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>97</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Thumb</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="ckBIndex">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>97</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Index</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="ckBMiddle">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>70</y>
+            <width>97</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Middle</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="ckBRing">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>97</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Ring</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="ckBSmall">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>130</y>
+            <width>97</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Small</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>Load Posture</string>
+       </attribute>
+       <widget class="QPushButton" name="pbQM">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>100</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Get QM</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbLoadInitial">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>10</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_29">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>51</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Object</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbLoadEnv">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>10</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_39">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>91</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Environment</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBLoadEnv">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>10</y>
+          <width>181</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbLoadObject">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>50</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBLoadObject">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>50</y>
+          <width>181</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBLoadInitial">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>10</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_42">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>16</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Initial Posture</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbGrasp">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>100</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Perform Grasp</string>
+        </property>
+       </widget>
+       <widget class="QGraphicsView" name="graphicsMeasures">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>150</y>
+          <width>421</width>
+          <height>421</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbLoadEnd">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>50</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_47">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>56</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>End Posture</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBLoadEnd">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>50</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pbLoadMarkers">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>90</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_59">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>96</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Markers</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cBLoadMarkers">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>90</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textA3">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>180</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_48">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>180</y>
+          <width>148</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Restriction of the Grip</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_49">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>230</y>
+          <width>148</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Dynamic Effects            </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textB1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>230</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_50">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>280</y>
+          <width>149</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ability to resist forces </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textC1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>280</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_51">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>330</y>
+          <width>148</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Comfort                           </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textD1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>330</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textD2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>380</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_52">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>380</y>
+          <width>149</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Manipulability                </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textE1">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>430</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_53">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>430</y>
+          <width>148</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fatigue                             </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textClas">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>480</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_54">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>480</y>
+          <width>149</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Classification                  </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pbLoadArm">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load Arm</string>
+    </property>
+   </widget>
+   <zorder>tabWidget_2</zorder>
+   <zorder>teOutput</zorder>
+   <zorder>pbUpdateSliders</zorder>
+   <zorder>pbSetCameraView</zorder>
+   <zorder>pbStartOpenRAVE</zorder>
+   <zorder>pbClearMarkers</zorder>
+   <zorder>pbLoadArm</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>787</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

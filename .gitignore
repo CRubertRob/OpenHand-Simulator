@@ -1,0 +1,6 @@
+/.settings
+*.pyc
+*.log
+*.o
+*~
+build/*

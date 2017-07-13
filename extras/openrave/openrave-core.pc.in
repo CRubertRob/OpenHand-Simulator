@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@/bin
+libdir=@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@
+includedir=@CMAKE_INSTALL_PREFIX@/include/@OPENRAVE_INCLUDE_INSTALL_DIR@
+
+Name: openrave
+Description: Open Robotics Automation Virtual Environment
+Version: @OPENRAVE_VERSION@
+URL: http://openrave.org
+Libs: -L${libdir} -lopenrave@OPENRAVE_LIBRARY_SUFFIX@ -lopenrave@OPENRAVE_LIBRARY_SUFFIX@-core
+Libs.private: @OPENRAVE_BOOST_LIB_DIRS@ -l@Boost_THREAD_LIBRARY@ @OPENRAVE_LOG4CXX_LIB_DIRS@ @OPENRAVE_LOG4CXX_LIBRARY@
+Cflags: -I${includedir} @OPENRAVE_BOOST_INCLUDE_DIRS@ @OPENRAVE_LOG4CXX_INCLUDE_DIRS@ @OPENRAVE_EXPORT_CXXFLAGS@

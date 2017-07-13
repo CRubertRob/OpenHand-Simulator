@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="kinbody/sah_hand.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>-0.04 0.08 0.02</Translation>
+    <joints>finger_1-1 finger_1-2 finger_1-3 finger_2-1 finger_2-2 finger_2-3 finger_3-1 finger_3-2 finger_3-3 finger_0-0 finger_0-2 finger_0-3 finger_0-4 </joints>
+    <closingdirection>-1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 -1</closingdirection>
+    <direction>-1 0 0</direction>
+  </Manipulator>
+</Robot>

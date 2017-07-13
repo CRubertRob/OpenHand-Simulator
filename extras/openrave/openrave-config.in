@@ -1,0 +1,93 @@
+#!/bin/sh
+
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix_set=no
+
+usage="\
+Usage: openrave-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--cflags] [--libs] [--libs-core] [--libs-only-l] [--libs-only-L] [--cflags-only-I] [--shared-libs] [--python-dir] [--octave-dir] [--matlab-dir] [--share-dir] [--usage | --help]"
+
+if test $# -eq 0; then
+      exit 1
+fi
+
+while test $# -gt 0; do
+  case "$1" in
+  -*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+  *) optarg= ;;
+  esac
+
+  case $1 in
+    --prefix=*)
+      prefix=$optarg
+      if test $exec_prefix_set = no ; then
+        exec_prefix=$optarg
+      fi
+      ;;
+    --prefix)
+      echo $prefix
+      ;;
+    --exec-prefix=*)
+      exec_prefix=$optarg
+      exec_prefix_set=yes
+      ;;
+    --exec-prefix)
+      echo $exec_prefix
+      ;;
+    --version)
+      echo @OPENRAVE_VERSION@
+      ;;
+    --cflags)
+      echo  -I@CMAKE_INSTALL_PREFIX@/include/@OPENRAVE_INCLUDE_INSTALL_DIR@ @OPENRAVE_BOOST_INCLUDE_DIRS@ @OPENRAVE_LOG4CXX_INCLUDE_DIRS@ -DOPENRAVE_DLL -DOPENRAVE_CORE_DLL @OPENRAVE_EXPORT_CXXFLAGS@
+      ;;
+    --cppflags)
+      echo  -I@CMAKE_INSTALL_PREFIX@/include/@OPENRAVE_INCLUDE_INSTALL_DIR@ @OPENRAVE_BOOST_INCLUDE_DIRS@ @OPENRAVE_LOG4CXX_INCLUDE_DIRS@ -DOPENRAVE_DLL -DOPENRAVE_CORE_DLL @OPENRAVE_EXPORT_CXXFLAGS@
+      ;;
+    --cflags-only-I)
+      echo -I@CMAKE_INSTALL_PREFIX@/include/@OPENRAVE_INCLUDE_INSTALL_DIR@ @OPENRAVE_BOOST_INCLUDE_DIRS@ @OPENRAVE_LOG4CXX_INCLUDE_DIRS@
+      ;;
+    --libs)
+      echo -L@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@ -lopenrave@OPENRAVE_LIBRARY_SUFFIX@ @OPENRAVE_BOOST_LIB_DIRS@ -l@Boost_THREAD_LIBRARY_RELEASE@ @OPENRAVE_LOG4CXX_LIB_DIRS@ @OPENRAVE_LOG4CXX_LIBRARY@
+      ;;
+    --libs-core)
+      echo -L@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@ -lopenrave@OPENRAVE_LIBRARY_SUFFIX@ -lopenrave@OPENRAVE_LIBRARY_SUFFIX@-core @OPENRAVE_BOOST_LIB_DIRS@ -l@Boost_THREAD_LIBRARY_RELEASE@ @OPENRAVE_LOG4CXX_LIB_DIRS@ @OPENRAVE_LOG4CXX_LIBRARY@
+      ;;
+    --libs-only-l)
+      echo -lopenrave@OPENRAVE_LIBRARY_SUFFIX@ -l@Boost_THREAD_LIBRARY_RELEASE@ @OPENRAVE_LOG4CXX_LIBRARY@
+      ;;
+    --libs-only-L)
+      echo -L@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@ @OPENRAVE_BOOST_LIB_DIRS@ @OPENRAVE_LOG4CXX_LIB_DIRS@
+      ;;
+    --shared-libs)
+      echo -L@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@ -lopenrave@OPENRAVE_LIBRARY_SUFFIX@ @OPENRAVE_BOOST_LIB_DIRS@ -l@Boost_THREAD_LIBRARY_RELEASE@ @OPENRAVE_LOG4CXX_LIB_DIRS@ @OPENRAVE_LOG4CXX_LIBRARY@
+      ;;
+    --python-dir)
+      echo @CMAKE_INSTALL_PREFIX@/@OPENRAVE_PYTHON_INSTALL_DIR@
+      ;;
+    --octave-dir)
+      echo @CMAKE_INSTALL_PREFIX@/@OPENRAVE_OCTAVE_INSTALL_DIR@
+      ;;
+    --matlab-dir)
+      echo @CMAKE_INSTALL_PREFIX@/@OPENRAVE_MATLAB_INSTALL_DIR@
+      ;;
+    --share-dir)
+      echo @CMAKE_INSTALL_PREFIX@/@OPENRAVE_SHARE_DIR@
+      ;;
+    --plugins-dir)
+      echo @CMAKE_INSTALL_PREFIX@/@OPENRAVE_PLUGINS_INSTALL_DIR@
+      ;;
+    --usage)
+      echo "${usage}"
+      exit 0
+      ;;
+    --help)
+      echo "${usage}"
+      exit 0
+      ;;
+    *)
+      echo "${usage}" 1>&2
+      exit 1
+      ;;
+  esac
+  shift
+done

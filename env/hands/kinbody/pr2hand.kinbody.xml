@@ -1,0 +1,84 @@
+<KinBody name="Pr2Hand">
+  <Body name="handbase" type="dynamic">
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0.0  0.0  0.0</Translation>
+      <data>models/pr2/pr2_2.wrl 1</data>
+      <Render>models/pr2/pr2_2.wrl 1</Render>
+    </Geom>
+  </Body>
+
+  <!-- finger 0-->
+  <Body name="Finger0-0" type="dynamic">
+    <Translation>0.018 0.0055 0.005</Translation>
+    <rotationaxis>0 1 0 40.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/pr2/pr2_0.wrl 1</data>
+      <Render>models/pr2/pr2_0.wrl 1</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-0">
+    <Body>Finger0-0</Body>
+    <Body>handbase</Body>
+	<offsetfrom>Finger0-0</offsetfrom>
+    <limitsdeg>0 40</limitsdeg>
+    <axis>0 1 0</axis>
+  </Joint>
+  
+  <Body name="Finger0-1" type="dynamic">
+    <offsetfrom>Finger0-0</offsetfrom>  
+    <Translation>-0.097 -0.0055 0.007</Translation>
+    <rotationaxis>0 1 0 -30.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/pr2/pr2_1.wrl 1</data>
+      <Render>models/pr2/pr2_1.wrl 1</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_0-1" enable="false" mimic_pos="finger_0-0"  mimic_vel="|finger_0-0 1" mimic_accel="|finger_0-0 0">
+    <Body>Finger0-1</Body>
+    <Body>Finger0-0</Body>
+	<offsetfrom>Finger0-1</offsetfrom>
+    <limitsdeg>0 40</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+  
+    <!-- finger 1-->
+  <Body name="Finger1-0" type="dynamic">
+    <Translation>0.018 -0.0055 -0.005</Translation>
+    <rotationaxis>0 1 0 40.0</rotationaxis>
+    <rotationaxis>1 0 0 180.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/pr2/pr2_0.wrl 1</data>
+      <Render>models/pr2/pr2_0.wrl 1</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_1-0">
+    <Body>Finger1-0</Body>
+    <Body>handbase</Body>
+	<offsetfrom>Finger1-0</offsetfrom>
+    <limitsdeg>0 40</limitsdeg>
+    <axis>0 1 0</axis>
+  </Joint>
+  
+  <Body name="Finger1-1" type="dynamic">
+    <offsetfrom>Finger1-0</offsetfrom>  
+    <Translation>-0.097 -0.0055 0.007</Translation>
+    <rotationaxis>0 1 0 -30.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>models/pr2/pr2_1.wrl 1</data>
+      <Render>models/pr2/pr2_1.wrl 1</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="finger_1-1" enable="false" mimic_pos="finger_1-0"  mimic_vel="|finger_1-0 1" mimic_accel="|finger_1-0 0">
+    <Body>Finger1-1</Body>
+    <Body>Finger1-0</Body>
+	<offsetfrom>Finger1-1</offsetfrom>
+    <limitsdeg>0 40</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  
+  <!-- add adjacent links, necessary in order to prevent bogus collisions -->
+  <adjacent>handbase box</adjacent>
+  <adjacent>handbase Finger0-0</adjacent>
+  <adjacent>Finger0-1 Finger0-0</adjacent>
+</KinBody>

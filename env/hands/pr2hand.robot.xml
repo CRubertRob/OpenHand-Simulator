@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="kinbody/pr2hand.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>-0.05 0 0</Translation>
+    <joints>finger_0-0 finger_1-0</joints>
+    <closingdirection>1 1</closingdirection>
+    <direction>-1 0 0</direction>
+  </Manipulator>
+</Robot>

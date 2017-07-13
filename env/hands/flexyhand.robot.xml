@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="./kinbody/flexyhand.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>0.0 0.0 0.09</Translation>
+    <joints> JIndex-P JIndex-M JIndex-D JMiddle-P JMiddle-M JMiddle-D JRing-P JRing-M JRing-D JPinky-P JPinky-M JPinky-D  JThumb-P JThumb-M</joints>
+    <closingdirection> -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1  </closingdirection>
+    <direction> -1 0 0</direction>
+  </Manipulator>
+</Robot>

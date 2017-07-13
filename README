@@ -1,0 +1,114 @@
+OpenHand Simulator Version 1.0 2017
+=====================================
+
+OpenHand is a tool for generate, evaluate and predict grasp stability using different robotic hand and object models. It is based in the work of Rosen Diankov in OpenRAVE.
+
+This software was developed by:
+- Carlos Rubert (cescuder@uji.es)
+- Beatriz Leon (beatrizleon@gmail.com)
+This software is maintained by Carlos Rubert (cescuder@uji.es) at the Robotic Intelligence Laboratory from Universitat Jaume I of Castellón (Spain)
+
+This software is licensed under the GNU GPLv3. You are free to use, modify or distribute the software but please, refer to the developers and the original software, as to Rosen Diankov for OpenRAVE. Sharing is caring.
+
+
+
+#####################################################################################################################################################################
+
+DEPENDENCIES:
+
+This Software has been tested in Ubuntu 12.04/14.04. 
+
+It is dependent on having installed openrave and ode, both packages are included in the 'extras' folder. ODE version is 0.13. OpenRAVE is a fork from master branch in commit: 78a4ff07b9dbc9aab980f8d6624c032f612dc4d8 (6 Jul 2017). 
+The OpenRAVE version has been slightly modified due to compatibility with OpenHand software. The modified files are: grasping.py (added functionalitites in the grasp generation process) and qtcoinviewer.cpp (solved issues with viewer not working properly in some mesh models).
+
+It is also dependent on numpy, scipy, hdf5 and pyhull.
+
+Dependencies versions tested and working
+- OpenRave 0.9
+- ODE 0.13
+- Numpy 1.13.0
+- Scipy 0.19.1
+- Pyhull 1.5.4
+- H5py 2.7
+
+Newer or older version of this software should be working, but hasn't been tested.
+
+
+#####################################################################################################################################################################
+
+DEPENDENCIES INSTALLATION:
+
+Instruccions for installing OpenRave and ODE can be found in 'docs' folder inside OpenRave:
+./extras/openrave/docs/Tutorial%20for%20Installing%20Openrave%20in%20Ubuntu-Ubuntu%20Mate%2014.04.2%20x64.rst
+
+It's also necessary having installed the library H5PY (Python HDF5). Instructions:
+	$ sudo pip install cython
+	$ sudo pip install h5py
+
+Python-qt4 is needed:
+	$ sudo apt-get install python-poppler-qt4
+
+Be sure to keep updated your numpy, scipy and pyhull libraries in order to have quality metrics working properly.
+	$ sudo apt-get install python-setuptools
+	$ sudo easy_install pyhull
+
+
+This package should be compatible with Ros Indigo, but it's not mandatory use ROS.
+
+#####################################################################################################################################################################
+
+INSTALL OPENHAND LIBRARIES
+
+Git clone the repo, execute the scripts located in the root folder:
+
+	$(sudo) python setup_lib.py install
+
+
+For installing the Umano Library you need to run in the root folder:
+	$ make
+	$ sudo make install
+
+Also, you need to export the '$OpenHand' path in your .bashrc file:
+	#Asuming you have downloaded OpenHand in your $HOME folder
+	export OPENRAVE_PATH=$HOME/OpenHand
+	export OPENRAVE_DATA=$OPENRAVE_DATA:$OPENRAVE_PATH/env:$OPENRAVE_PATH/env/armGeometry/skin:$OPENRAVE_PATH/env/armGeometry/bones:
+	export OPENRAVE_PLUGINS=$OPENRAVE_PATH/build:$OPENRAVE_PLUGINS
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(openrave-config --python-dir)/openravepy/_openravepy_  
+	export PYTHONPATH=$PYTHONPATH:$(openrave-config --python-dir)  
+
+
+
+ROS INSTALL
+
+Git clone the repo on your catkin_ws/srcm then on your catkin_ws do:
+
+	$ catkin_make
+
+#####################################################################################################################################################################
+
+RUNING THE UI
+
+You can run directly the Openhand.py file in src/oh_gui:
+
+	$python src/oh_gui/Openhand.py
+
+Or using ros (after catkin_make):
+
+	$rosrun openhand openhand.py
+
+IMPORTING THE LIBRARIES
+
+For using the quality metrics, you can import them in python with:
+	import oh_utils.CalculateMeasures
+You can also import oh_utils.oh_utils, which contains some utilities for grasping, loading objects and hand models.
+
+#####################################################################################################################################################################
+
+OpenHand Structure
+
+OpenHand is designed for research purposes, all the grasps generated are stored as experiments in the env folder 'env/experiments'. For every experiment a folder with a main hdf file is contained, this file references to the hands used in the experiment, for every hand used, a new hdf file is created inside the correspondent experiment folder. 
+
+The objects available are in the 'env' folder, different databses of objects are used, to select one you should put the mesh models in the 'objects' folder inside 'env'. 
+
+If you want to add new hand models, they are contained in the 'hands' folder inside 'env'. This folder contains for each hand a main '.robot.xml' file for defining the manipulator and a '.kinbody.xml' file for the geometry inside the kinbody folder, togheter with the mesh models of the hand. But you're free to use the structure you want for your own hand models, just be sure to include the main hand file in the hands folder.
+

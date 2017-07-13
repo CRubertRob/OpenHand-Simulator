@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="kinbody/armarIII.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>-0.02 0 0.07</Translation>
+    <joints>JB0 JT0 JT1 JI0 JI1 JM0 JM1 JR0 JR1 JP0 JP1</joints>
+    <closingdirection>1 1 1 1 1 1 1 1 1 1 1</closingdirection>
+    <direction>0 0 1</direction>
+  </Manipulator>
+</Robot>

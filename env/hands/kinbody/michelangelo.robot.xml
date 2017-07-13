@@ -1,0 +1,143 @@
+<Robot name="Michelangelo">	
+	<KinBody name="michelangelo">
+	   	<Body name="root">
+			<Geom type="trimesh">
+       			<data>models/root.iv 0.01</data>
+          	</Geom>
+	   	</Body>   	
+	   	<!--
+	   	<Body name="box">
+			<offsetfrom>root</offsetfrom>
+			<Geom type="box">
+      			<Extents>.001 0.001 0.001</Extents>
+    		</Geom>
+	   	</Body>  	
+	   	<Joint name="vj" type="hinge">
+      			<body>box</body>
+      			<body>root</body>
+      			<offsetfrom>root</offsetfrom>
+      			<limitsdeg>0 135</limitsdeg>
+      			<axis>0 0 1</axis>
+    	</Joint>
+    	-->
+	   	<Body name="small">
+      		<translation>-0.0447 -0.00475 0.0945</translation>
+			<rotationaxis>1 0 0 13.8</rotationaxis>
+			<rotationaxis>0 1 0 -126.0</rotationaxis>
+			<rotationaxis>0 0 1 -5.0</rotationaxis>			
+			<Geom type="trimesh">
+       			<data>models/small.iv 0.01</data>    
+          	</Geom>
+	   	</Body>
+	   	<Joint name="pinky_Joint" type="hinge" enable="false" mimic_pos="index_Joint*1.25" mimic_vel="|index_Joint 1" mimic_accel="|index_Joint 0">
+      			<body>root</body>
+      			<body>small</body>
+      			<offsetfrom>small</offsetfrom>
+      			<limitsdeg>0 87.5</limitsdeg>
+      			<axis>0 0 -1</axis>
+    	</Joint>
+    	<Body name="ring">
+      		<translation>-0.0307 -0.0035 0.11075</translation>
+			<rotationaxis>1 0 0 6.5</rotationaxis>
+			<rotationaxis>0 1 0 -112.0</rotationaxis>
+			<rotationaxis>0 0 1 0</rotationaxis>			
+			<Geom type="trimesh">
+       			<data>models/ring.iv 0.01</data>    
+          	</Geom>
+	   	</Body>
+	   	<Joint name="ring_Joint" type="hinge" enable="false" mimic_pos="index_Joint*1.2" mimic_vel="|index_Joint 1" mimic_accel="|index_Joint 0">
+      			<body>root</body>
+      			<body>ring</body>
+      			<offsetfrom>ring</offsetfrom>
+      			<limitsdeg>0 84</limitsdeg>
+      			<axis>0 0 -1</axis>
+    	</Joint>
+    	<Body name="middle">
+      		<translation>-0.01120 0.00325 0.1165</translation>
+			<rotationaxis>0 1 0 -100.0</rotationaxis>
+			<rotationaxis>0 0 1 3.0</rotationaxis>
+			<rotationaxis>0 0 1 2.0</rotationaxis>				
+			<Geom type="trimesh">
+       			<data>models/middle.iv 0.01</data>    
+          	</Geom>
+	   	</Body>
+	   	<Joint name="middle_Joint" type="hinge" enable="false" mimic_pos="index_Joint*1.1" mimic_vel="|index_Joint 1" mimic_accel="|index_Joint 0">
+      			<body>root</body>
+      			<body>middle</body>
+      			<offsetfrom>middle</offsetfrom>
+      			<limitsdeg>0 77</limitsdeg>
+      			<axis>0 0 -1</axis>
+    	</Joint>
+    	<Body name="index">
+      		<translation>0.01205 -0.00050 0.1185</translation>
+			<rotationaxis>1 0 0 -5</rotationaxis>
+			<rotationaxis>0 1 0 -92.5</rotationaxis>
+			<rotationaxis>0 0 1 10.0</rotationaxis>			
+			<Geom type="trimesh">
+       			<data>models/index.iv 0.01</data> 
+          	</Geom>
+	   	</Body>
+	   	<Joint name="index_Joint" type="hinge">
+      			<body>root</body>
+      			<body>index</body>
+      			<offsetfrom>index</offsetfrom>
+      			<limitsdeg>0 70</limitsdeg>
+      			<axis>0 0 -1</axis>
+    	</Joint>
+ 	
+    	<Body name="thumb_flex">
+      		<translation>0.02030 -0.00475 0.066</translation>
+			<rotationaxis>1 0 0 -2.5</rotationaxis>
+			<rotationaxis>0 1 0 16.0</rotationaxis>
+			<rotationaxis>0 0 1 -8.0</rotationaxis>
+			<Geom type="trimesh">
+       			<data>models/thumb_flex.iv 0.01</data>    
+          	</Geom>
+	   	</Body>
+	   	<Joint name="thumb_flex_Joint" type="hinge"  enable="true">
+      			<body>root</body>
+      			<body>thumb_flex</body>
+      			<offsetfrom>thumb_flex</offsetfrom>
+      			<limitsdeg>0 70</limitsdeg>
+      			<axis>0 0 -1</axis>
+    	</Joint>
+      	<Body name="thumb_rotate">
+      		<translation>0.02916 -0.006 0.06328</translation>
+			<rotationaxis>1 0 0 87.5</rotationaxis>
+			<rotationaxis>0 1 0 16.0</rotationaxis>
+			<rotationaxis>0 0 1 -8.0</rotationaxis>
+			<Geom type="trimesh">
+       			<data>models/thumb_rotate.iv 0.01</data>    
+          	</Geom>
+	   	</Body>
+	   	<Joint name="thumb_rotate_Joint" type="hinge" enable="true">
+      			<body>thumb_flex</body>
+      			<body>thumb_rotate</body>
+      			<offsetfrom>thumb_rotate</offsetfrom>
+      			<limitsdeg>0 20</limitsdeg>
+      			<axis>0 0 1</axis>
+    	</Joint>
+      	<Body name="thumb_rotate_distal">
+      		<translation>0.02916 -0.006 0.06328</translation>
+			<rotationaxis>1 0 0 87.5</rotationaxis>
+			<rotationaxis>0 1 0 16.0</rotationaxis>
+			<rotationaxis>0 0 1 -8.0</rotationaxis>
+			<Geom type="trimesh">
+       			<data>models/thumb_rotate_distal.iv 0.01</data>    
+          	</Geom>
+	   	</Body>
+	   	<Joint name="thumb_rotate_Joint_distal" type="hinge" enable="false">
+      			<body>thumb_rotate</body>
+      			<body>thumb_rotate_distal</body>
+      			<limitsdeg>0 0</limitsdeg>
+    	</Joint> 
+  	</KinBody>
+	<manipulator name="hand">
+		<base>root</base>
+		<effector>root</effector>		
+		<translation>0.0 0.0 0.1</translation>
+		<joints> thumb_flex_Joint index_Joint thumb_rotate_Joint </joints>		
+		<closingdirection>1 1 0</closingdirection>
+		<direction>0 -1 0</direction>
+	</manipulator>
+</Robot>

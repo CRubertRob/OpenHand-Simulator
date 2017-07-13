@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="./kinbody/devalhand.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>handbase</base>
+    <effector>handbase</effector>
+    <Translation>0.01 0.0 0.03</Translation>
+    <joints> JIndex-P JMiddle-P JRing-P JPinky-P JThumb-MCP JThumb-P </joints>
+    <closingdirection> 1 1 1 1 1 1 </closingdirection>
+    <direction> 0 0 1</direction>
+  </Manipulator>
+</Robot>

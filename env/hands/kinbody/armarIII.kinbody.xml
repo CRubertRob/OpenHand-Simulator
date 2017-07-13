@@ -1,0 +1,221 @@
+<KinBody name="ArmarIII">
+	<Body name="handbase" type="dynamic">
+		<Translation>0 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/palm1_r.iv 1</data>
+			<Render>armarIII/palm1_r.iv 1</Render>
+		</Geom>
+	</Body>
+
+	<Body name="handbase-2" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>-0.0087 -0.0135 0.02925</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/palm2_r.iv 1</data>
+			<Render>armarIII/palm2_r.iv 1</Render>
+		</Geom>
+	</Body>
+
+	<Joint type="hinge" name="JB0">
+		<Body>handbase</Body>
+		<Body>handbase-2</Body>
+		<offsetfrom>handbase-2</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 -1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+
+	<!-- Thumb -->
+	<Body name="Thumb0" type="dynamic">
+		<offsetfrom>handbase</offsetfrom>
+		<Translation>-0.0489 0 0.02925</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/thumb_r1.iv 1</data>
+			<Render>armarIII/thumb_r1.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JT0">
+		<Body>handbase</Body>
+		<Body>Thumb0</Body>
+		<offsetfrom>Thumb0</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+	<Body name="Thumb1" type="dynamic">
+		<offsetfrom>Thumb0</offsetfrom>
+		<Translation>-0.0402 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<Translation>0 0 0</Translation>
+			<data>armarIII/thumb_r2.iv 1</data>
+			<Render>armarIII/thumb_r2.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JT1">
+		<Body>Thumb1</Body>
+		<Body>Thumb0</Body>
+		<offsetfrom>Thumb1</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 -1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+
+	<!-- Pinky -->
+	<Body name="Pinky0" type="dynamic">
+		<offsetfrom>handbase-2</offsetfrom>
+		<Translation>0.0404 0.073 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/pinky_r1.iv 1</data>
+			<Render>armarIII/pinky_r1.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JP0">
+		<Body>handbase-2</Body>
+		<Body>Pinky0</Body>
+		<offsetfrom>Pinky0</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 -1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+	<Body name="Pinky1" type="dynamic">
+		<offsetfrom>Pinky0</offsetfrom>
+		<Translation>0.0402 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/pinky_r2.iv 1</data>
+			<Render>armarIII/pinky_r2.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JP1">
+		<Body>Pinky1</Body>
+		<Body>Pinky0</Body>
+		<offsetfrom>Pinky1</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>	
+	
+	<!-- Ring -->
+	<Body name="Ring0" type="dynamic">
+		<offsetfrom>handbase-2</offsetfrom>
+		<Translation>0.0404 0.051 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/ring_r1.iv 1</data>
+			<Render>armarIII/ring_r1.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JR0">
+		<Body>handbase-2</Body>
+		<Body>Ring0</Body>
+		<offsetfrom>Ring0</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 -1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+	<Body name="Ring1" type="dynamic">
+		<offsetfrom>Ring0</offsetfrom>
+		<Translation>0.0402 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/ring_r2.iv 1</data>
+			<Render>armarIII/ring_r2.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JR1">
+		<Body>Ring1</Body>
+		<Body>Ring0</Body>
+		<offsetfrom>Ring1</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>	
+
+	<!-- Middle -->
+	<Body name="Middle0" type="dynamic">
+		<offsetfrom>handbase-2</offsetfrom>
+		<Translation>0.0404 0.027 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/middle_r1.iv 1</data>
+			<Render>armarIII/middle_r1.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JM0">
+		<Body>handbase-2</Body>
+		<Body>Middle0</Body>
+		<offsetfrom>Middle0</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 -1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+	<Body name="Middle1" type="dynamic">
+		<offsetfrom>Middle0</offsetfrom>
+		<Translation>0.0402 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/middle_r2.iv 1</data>
+			<Render>armarIII/middle_r2.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JM1">
+		<Body>Middle1</Body>
+		<Body>Middle0</Body>
+		<offsetfrom>Middle1</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>	
+	
+	<!-- Index -->
+	<Body name="Index0" type="dynamic">
+		<offsetfrom>handbase-2</offsetfrom>
+		<Translation>0.0402 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/index_r1.iv 1</data>
+			<Render>armarIII/index_r1.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JI0">
+		<Body>handbase-2</Body>
+		<Body>Index0</Body>
+		<offsetfrom>Index0</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 -1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>
+	<Body name="Index1" type="dynamic">
+		<offsetfrom>Index0</offsetfrom>
+		<Translation>0.0402 0 0</Translation>
+		<Geom type="trimesh" modifiable="false">
+			<data>armarIII/index_r2.iv 1</data>
+			<Render>armarIII/index_r2.iv 1</Render>
+		</Geom>
+	</Body>
+	<Joint type="hinge" name="JI1">
+		<Body>Index1</Body>
+		<Body>Index0</Body>
+		<offsetfrom>Index1</offsetfrom>
+		<limitsdeg>0 180</limitsdeg>
+		<axis>0 1 0</axis>
+		<maxvel>2</maxvel>
+		<resolution>4.2</resolution>
+	</Joint>		
+
+	<!-- add adjacent links, necessary in order to prevent bogus collisions -->
+	<!-- <adjacent>Finger0-0 Finger1-0</adjacent> -->
+	<!-- <adjacent>Finger0-1 Finger0-2</adjacent> -->
+	<!-- <adjacent>Finger1-1 Finger1-2</adjacent> -->
+	<!-- <adjacent>Finger2-1 Finger2-2</adjacent> -->
+	<!-- <adjacent>handbase Finger0-1</adjacent> -->
+	<!-- <adjacent>handbase Finger0-2</adjacent> -->
+	<!-- <adjacent>handbase Finger1-1</adjacent> -->
+	<!-- <adjacent>handbase Finger1-2</adjacent> -->
+	<!-- <adjacent>handbase Finger2-1</adjacent> -->
+	<!-- <adjacent>handbase Finger2-2</adjacent> -->
+</KinBody>

@@ -1,0 +1,405 @@
+<KinBody name="ModelT">
+  <Body name="handbase" type="dynamic">
+    <Geom type="cylinder" modifiable="false">
+      <radius>0.05</radius>
+       <height>0.08</height>
+    </Geom>
+    <mass type="custom">
+      <total>1.18</total>
+    </mass>
+  </Body>
+
+  <!-- finger 0-->
+  <Body name="Finger0-0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>0.027 -0.045 -0.022</Translation>
+    <rotationaxis>1 0 0 180.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>modelt/finger_C.stl 0.001</data>
+      <Render>modelt/finger_C.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false0-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger0-0</Body>
+    <offsetfrom>Finger0-0</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger0-01" type="dynamic" >
+    <offsetfrom>Finger0-0</offsetfrom>
+    <Translation>0 0.00108 -0.0275</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false0-1" enable="false">
+    <Body>Finger0-0</Body>
+    <Body>Finger0-01</Body>
+    <offsetfrom>Finger0-01</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger0-1" type="dynamic" >
+    <offsetfrom>Finger0-01</offsetfrom>
+    <Translation>0.00878 0.00 -0.0303</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_B.stl 0.001</data>
+      <Render>modelt/finger_B.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF0-1" enable="true">
+    <Body>Finger0-01</Body>
+    <Body>Finger0-1</Body>
+    <offsetfrom>Finger0-01</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+
+  <Body name="Finger0-12" type="dynamic" >
+    <offsetfrom>Finger0-1</offsetfrom>
+    <Translation>0 0.0067 -0.0305</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false0-2" enable="false">
+    <Body>Finger0-1</Body>
+    <Body>Finger0-12</Body>
+    <offsetfrom>Finger0-1</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger0-2" type="dynamic" >
+    <offsetfrom>Finger0-12</offsetfrom>
+    <Translation>0.01035 -0.0001 -0.01435</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_A.stl 0.001</data>
+      <Render>modelt/finger_A.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF0-2" enable="true">
+    <Body>Finger0-12</Body>
+    <Body>Finger0-2</Body>
+    <offsetfrom>Finger0-12</offsetfrom>
+    <limitsdeg>0 75</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  <!-- finger 1-->
+  <Body name="Finger1-0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>0.009 -0.045 0.022</Translation>
+    <rotationaxis>1 0 0 180.0</rotationaxis>
+    <rotationaxis>0 1 0 180.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>modelt/finger_C.stl 0.001</data>
+      <Render>modelt/finger_C.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false1-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger1-0</Body>
+    <offsetfrom>Finger1-0</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger1-01" type="dynamic" >
+    <offsetfrom>Finger1-0</offsetfrom>
+    <Translation>0 0.00108 -0.0275</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false1-1" enable="false">
+    <Body>Finger1-0</Body>
+    <Body>Finger1-01</Body>
+    <offsetfrom>Finger1-01</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger1-1" type="dynamic" >
+    <offsetfrom>Finger1-01</offsetfrom>
+    <Translation>0.00878 0.00 -0.0303</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_B.stl 0.001</data>
+      <Render>modelt/finger_B.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF1-1" enable="true">
+    <Body>Finger1-01</Body>
+    <Body>Finger1-1</Body>
+    <offsetfrom>Finger1-01</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  <Body name="Finger1-12" type="dynamic" >
+    <offsetfrom>Finger1-1</offsetfrom>
+    <Translation>0 0.0067 -0.0305</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false1-2" enable="false">
+    <Body>Finger1-1</Body>
+    <Body>Finger1-12</Body>
+    <offsetfrom>Finger1-1</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger1-2" type="dynamic" >
+    <offsetfrom>Finger1-12</offsetfrom>
+    <Translation>0.01035 -0.0001 -0.01435</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_A.stl 0.001</data>
+      <Render>modelt/finger_A.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF1-2" enable="true">
+    <Body>Finger1-12</Body>
+    <Body>Finger1-2</Body>
+    <offsetfrom>Finger1-12</offsetfrom>
+    <limitsdeg>0 75</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  <!-- finger 3-->
+  <Body name="Finger3-0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>-0.009 -0.045 -0.022</Translation>
+    <rotationaxis>1 0 0 180.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>modelt/finger_C.stl 0.001</data>
+      <Render>modelt/finger_C.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false3-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger3-0</Body>
+    <offsetfrom>Finger3-0</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger3-01" type="dynamic" >
+    <offsetfrom>Finger3-0</offsetfrom>
+    <Translation>0 0.00108 -0.0275</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false3-1" enable="false">
+    <Body>Finger3-0</Body>
+    <Body>Finger3-01</Body>
+    <offsetfrom>Finger3-01</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger3-1" type="dynamic" >
+    <offsetfrom>Finger3-01</offsetfrom>
+    <Translation>0.00878 0.00 -0.0303</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_B.stl 0.001</data>
+      <Render>modelt/finger_B.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF3-1" enable="true">
+    <Body>Finger3-01</Body>
+    <Body>Finger3-1</Body>
+    <offsetfrom>Finger3-01</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  <Body name="Finger3-12" type="dynamic" >
+    <offsetfrom>Finger3-1</offsetfrom>
+    <Translation>0 0.0067 -0.0305</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false3-2" enable="false">
+    <Body>Finger3-1</Body>
+    <Body>Finger3-12</Body>
+    <offsetfrom>Finger3-1</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger3-2" type="dynamic" >
+    <offsetfrom>Finger3-12</offsetfrom>
+    <Translation>0.01035 -0.0001 -0.01435</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_A.stl 0.001</data>
+      <Render>modelt/finger_A.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF3-2" enable="true">
+    <Body>Finger3-12</Body>
+    <Body>Finger3-2</Body>
+    <offsetfrom>Finger3-12</offsetfrom>
+    <limitsdeg>0 75</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  <!-- finger 4-->
+  <Body name="Finger4-0" type="dynamic">
+    <offsetfrom>handbase</offsetfrom>
+    <Translation>-0.027 -0.045 0.022</Translation>
+    <rotationaxis>1 0 0 180.0</rotationaxis>
+    <rotationaxis>0 1 0 180.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>modelt/finger_C.stl 0.001</data>
+      <Render>modelt/finger_C.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false4-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger4-0</Body>
+    <offsetfrom>Finger4-0</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger4-01" type="dynamic" >
+    <offsetfrom>Finger4-0</offsetfrom>
+    <Translation>0 0.00108 -0.0275</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false4-1" enable="false">
+    <Body>Finger4-0</Body>
+    <Body>Finger4-01</Body>
+    <offsetfrom>Finger4-01</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger4-1" type="dynamic" >
+    <offsetfrom>Finger4-01</offsetfrom>
+    <Translation>0.00878 0.00 -0.0303</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_B.stl 0.001</data>
+      <Render>modelt/finger_B.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF4-1" enable="true">
+    <Body>Finger4-01</Body>
+    <Body>Finger4-1</Body>
+    <offsetfrom>Finger4-01</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+  <Body name="Finger4-12" type="dynamic" >
+    <offsetfrom>Finger4-1</offsetfrom>
+    <Translation>0 0.0067 -0.0305</Translation>
+    <rotationaxis>0 0 1 90.0</rotationaxis>
+    <Geom type="cylinder" modifiable="false">
+	<radius>0.001</radius>
+	<height>0.016</height>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="false4-2" enable="false">
+    <Body>Finger4-1</Body>
+    <Body>Finger4-12</Body>
+    <offsetfrom>Finger4-1</offsetfrom>
+    <limitsdeg>0 140</limitsdeg>
+    <axis>1 0 0</axis>
+  </Joint>
+
+  <Body name="Finger4-2" type="dynamic" >
+    <offsetfrom>Finger4-12</offsetfrom>
+    <Translation>0.01035 -0.0001 -0.01435</Translation>
+    <rotationaxis>0 0 1 -90.0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>modelt/finger_A.stl 0.001</data>
+      <Render>modelt/finger_A.stl 0.001</Render>
+    </Geom>
+  </Body>
+
+  <Joint type="hinge" name="JF4-2" enable="true">
+    <Body>Finger4-12</Body>
+    <Body>Finger4-2</Body>
+    <offsetfrom>Finger4-12</offsetfrom>
+    <limitsdeg>0 75</limitsdeg>
+    <axis>0 -1 0</axis>
+  </Joint>
+
+
+  <!-- add adjacent links, necessary in order to prevent bogus collisions -->
+  <adjacent>handbase Finger0-1</adjacent>
+  <adjacent>Finger0-0 Finger0-1</adjacent>
+  <adjacent>Finger0-1 Finger0-2</adjacent>
+  <adjacent>handbase Finger0-2</adjacent>
+  <adjacent>handbase Finger1-1</adjacent>
+  <adjacent>Finger1-0 Finger1-1</adjacent>
+  <adjacent>Finger1-1 Finger1-2</adjacent>
+  <adjacent>handbase Finger1-2</adjacent>
+  <adjacent>handbase Finger3-1</adjacent>
+  <adjacent>Finger3-0 Finger3-1</adjacent>
+  <adjacent>Finger3-1 Finger3-2</adjacent>
+  <adjacent>handbase Finger3-2</adjacent>
+  <adjacent>handbase Finger4-1</adjacent>
+  <adjacent>Finger4-0 Finger4-1</adjacent>
+  <adjacent>Finger4-1 Finger4-2</adjacent>
+  <adjacent>handbase Finger4-2</adjacent>
+</KinBody>

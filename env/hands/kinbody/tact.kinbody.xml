@@ -1,0 +1,327 @@
+<KinBody name="TactHand">
+  <Body name="handbase" type="dynamic">
+  <rotationaxis>1 0 0 -90</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <data>tact/Base.stl 1</data>
+      <Render>tact/Base.stl 1</Render>
+    </Geom>
+  </Body>
+
+<!--   finger 0--> 
+   <Body name="Finger0-0" type="dynamic"> 
+	<offsetfrom>handbase</offsetfrom>
+    <Translation>0 -0.06 0.037</Translation> 
+    <rotationaxis>0 0 1 -90</rotationaxis>
+    <rotationaxis>1 0 0 90</rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/MotorHousing.stl 0.001</data> 
+       <Render>tact/MotorHousing.stl 0.001</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="false0-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger0-0</Body>
+    <offsetfrom>Finger0-0</offsetfrom>
+  </Joint>
+   <Body name="Finger0-1" type="dynamic" > 
+     <offsetfrom>Finger0-0</offsetfrom> 
+     <Translation>0.0 -0.001 0.034</Translation> 
+     <rotationaxis>0 1 0 90</rotationaxis>
+     <rotationaxis>1 0 0 180</rotationaxis>
+     <Geom type="trimesh" modifiable="false"> 
+       <data>tact/Finger2_5k.stl 1</data> 
+       <Render>tact/Finger2_5k.stl 1</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="JF0-MCP"> 
+     <Body>Finger0-0</Body>
+     <Body>Finger0-1</Body> 
+     <offsetfrom>Finger0-1</offsetfrom> 
+     <limitsdeg>0 90</limitsdeg> 
+     <axis>0 0 -1</axis> 
+     <maxvel>1</maxvel>
+   </Joint>
+  <Body name="Finger0-2" type="dynamic" >
+    <offsetfrom>Finger0-1</offsetfrom>
+    <Translation>0.041 -0.001 0</Translation>
+    <rotationaxis>0 0 1 0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>tact/Finger1_5k.stl 1</data>
+      <Render>tact/Finger1_5k.stl 1</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF0-PIP" type="hinge" enable="false" mimic_pos="JF0-MCP*67/90" mimic_vel="|JF0-MCP 1">
+    <offsetfrom>Finger0-2</offsetfrom>
+    <Body>Finger0-1</Body>
+    <Body>Finger0-2</Body>
+    <limitsdeg>0 67</limitsdeg>
+    <axis>0 0 -1</axis>
+    <maxvel>1</maxvel>
+  </Joint> 
+
+<!--   finger 1--> 
+   <Body name="Finger1-0" type="dynamic"> 
+	<offsetfrom>handbase</offsetfrom>
+    <Translation>0.0 -0.067 0.012</Translation> 
+    <rotationaxis>0 0 1 -90</rotationaxis>
+    <rotationaxis>1 0 0 90</rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/MotorHousing.stl 0.001</data> 
+       <Render>tact/MotorHousing.stl 0.001</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="false1-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger1-0</Body>
+    <offsetfrom>Finger1-0</offsetfrom>
+   </Joint>
+   <Body name="Finger1-1" type="dynamic" > 
+     <offsetfrom>Finger1-0</offsetfrom> 
+     <Translation>0.0 -0.001 0.034</Translation> 
+     <rotationaxis>0 1 0 90</rotationaxis>
+     <rotationaxis>1 0 0 180</rotationaxis>
+     <Geom type="trimesh" modifiable="false"> 
+       <data>tact/Finger2_5k.stl 1</data> 
+       <Render>tact/Finger2_5k.stl 1</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="JF1-MCP">
+     <offsetfrom>Finger1-1</offsetfrom>  
+     <Body>Finger1-0</Body>
+     <Body>Finger1-1</Body> 
+     <limitsdeg>0 90</limitsdeg> 
+     <axis>0 0 -1</axis> 
+     <maxvel>1</maxvel>
+   </Joint>
+  <Body name="Finger1-2" type="dynamic" >
+    <offsetfrom>Finger1-1</offsetfrom>
+    <Translation>0.041 -0.001 0</Translation>
+    <rotationaxis>0 0 1 0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>tact/Finger1_5k.stl 1</data>
+      <Render>tact/Finger1_5k.stl 1</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF1-PIP" type="hinge" enable="false" mimic_pos="JF1-MCP*67/90" mimic_vel="|JF1-MCP 1">
+    <Body>Finger1-1</Body>
+    <Body>Finger1-2</Body>
+    <offsetfrom>Finger1-2</offsetfrom>
+    <limitsdeg>0 67</limitsdeg>
+    <axis>0 0 -1</axis>
+    <maxvel>1</maxvel>
+  </Joint> 
+  
+  <!--   finger 2--> 
+    <Body name="Finger2-0" type="dynamic"> 
+	<offsetfrom>handbase</offsetfrom>
+    <Translation>0.0 -0.059 -0.012</Translation> 
+    <rotationaxis>0 0 1 -90</rotationaxis>
+    <rotationaxis>1 0 0 90</rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/MotorHousing.stl 0.001</data> 
+       <Render>tact/MotorHousing.stl 0.001</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="false2-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger2-0</Body>
+    <offsetfrom>Finger2-0</offsetfrom>
+   </Joint>
+   <Body name="Finger2-1" type="dynamic" > 
+     <offsetfrom>Finger2-0</offsetfrom> 
+     <Translation>0.0 -0.001 0.034</Translation> 
+     <rotationaxis>0 1 0 90</rotationaxis>
+     <rotationaxis>1 0 0 180</rotationaxis>
+     <Geom type="trimesh" modifiable="false"> 
+       <data>tact/Finger2_5k.stl 1</data> 
+       <Render>tact/Finger2_5k.stl 1</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="JF2-MCP">
+     <offsetfrom>Finger2-1</offsetfrom>  
+     <Body>Finger2-0</Body>
+     <Body>Finger2-1</Body> 
+     <limitsdeg>0 90</limitsdeg> 
+     <axis>0 0 -1</axis> 
+     <maxvel>1</maxvel>
+   </Joint>
+  <Body name="Finger2-2" type="dynamic" >
+    <offsetfrom>Finger2-1</offsetfrom>
+    <Translation>0.041 -0.001 0</Translation>
+    <rotationaxis>0 0 1 0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>tact/Finger1_5k.stl 1</data>
+      <Render>tact/Finger1_5k.stl 1</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF2-PIP" type="hinge" enable="false" mimic_pos="JF2-MCP*67/90" mimic_vel="|JF2-MCP 1">
+    <Body>Finger2-1</Body>
+    <Body>Finger2-2</Body>
+    <offsetfrom>Finger2-2</offsetfrom>
+    <limitsdeg>0 67</limitsdeg>
+    <axis>0 0 -1</axis>
+    <maxvel>1</maxvel>
+  </Joint> 
+  
+  <!--   finger 3--> 
+   <Body name="Finger3-0" type="dynamic"> 
+	<offsetfrom>handbase</offsetfrom>
+    <Translation>0.0 -0.052 -0.036</Translation> 
+    <rotationaxis>0 0 1 -90</rotationaxis>
+    <rotationaxis>1 0 0 90</rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/MotorHousing.stl 0.001</data> 
+       <Render>tact/MotorHousing.stl 0.001</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="false3-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger3-0</Body>
+    <offsetfrom>Finger3-0</offsetfrom>
+   </Joint>
+   <Body name="Finger3-1" type="dynamic" > 
+     <offsetfrom>Finger3-0</offsetfrom> 
+     <Translation>0.0 -0.001 0.034</Translation> 
+     <rotationaxis>0 1 0 90</rotationaxis>
+     <rotationaxis>1 0 0 180</rotationaxis>
+     <Geom type="trimesh" modifiable="false"> 
+       <data>tact/Finger2_5k.stl 1</data> 
+       <Render>tact/Finger2_5k.stl 1</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="JF3-MCP">
+     <offsetfrom>Finger3-1</offsetfrom>  
+     <Body>Finger3-0</Body>
+     <Body>Finger3-1</Body> 
+     <limitsdeg>0 90</limitsdeg> 
+     <axis>0 0 -1</axis> 
+     <maxvel>1</maxvel>
+   </Joint>
+  <Body name="Finger3-2" type="dynamic" >
+    <offsetfrom>Finger3-1</offsetfrom>
+    <Translation>0.041 -0.001 0</Translation>
+    <rotationaxis>0 0 1 0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>tact/Finger1_5k.stl 1</data>
+      <Render>tact/Finger1_5k.stl 1</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF3-PIP" type="hinge" enable="false" mimic_pos="JF3-MCP*67/90" mimic_vel="|JF3-MCP 1">
+    <Body>Finger3-1</Body>
+    <Body>Finger3-2</Body>
+    <offsetfrom>Finger3-2</offsetfrom>
+    <limitsdeg>0 67</limitsdeg>
+    <axis>0 0 -1</axis>
+    <maxvel>1</maxvel>
+  </Joint> 
+
+ <!--   finger 4--> 
+  <Body name="Finger4-0" type="dynamic"> 
+	<offsetfrom>handbase</offsetfrom>
+    <Translation>0.012 -0.025 0.04</Translation> 
+    <rotationaxis>-1 0 0 -85 </rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/ThumbMount.stl 0.001</data> 
+       <Render>tact/ThumbMount.stl 0.001</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="false4-0" enable="false">
+    <Body>handbase</Body>
+    <Body>Finger4-0</Body>
+    <offsetfrom>Finger4-0</offsetfrom>
+   </Joint>
+   <Body name="Finger4-1" type="dynamic"> 
+	<offsetfrom>Finger4-0</offsetfrom>
+    <Translation>0.01 -0.01 0.03</Translation> 
+    <rotationaxis>-1 0 0 90 </rotationaxis>
+    <rotationaxis>0 1 0 180 </rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/ThumbHinge.stl 1</data> 
+       <Render>tact/ThumbHinge.stl 1</Render> 
+     </Geom> 
+   </Body> 
+  <Joint name="JF4-MCP" type="hinge">
+    <Body>Finger4-0</Body>
+    <Body>Finger4-1</Body>
+    <offsetfrom>Finger4-1</offsetfrom>
+    <limitsdeg>0 105</limitsdeg>
+    <axis>0 -1 0</axis>
+    <maxvel>1</maxvel>
+  </Joint>
+  <Body name="Finger4-2" type="dynamic"> 
+	<offsetfrom>Finger4-1</offsetfrom>
+    <Translation>0.002 -0.04 0.025</Translation> 
+    <rotationaxis>-1 0 0 90 </rotationaxis>
+    
+    <rotationaxis>1 0 0 30 </rotationaxis>
+    <Geom type="trimesh" modifiable="false"> 
+       <data>tact/MotorHousing.stl 0.001</data> 
+       <Render>tact/MotorHousing.stl 0.001</Render> 
+     </Geom> 
+   </Body> 
+   <Joint name="JF4-MCPFalse" type="hinge" enable="false">
+    <Body>Finger4-1</Body>
+    <Body>Finger4-2</Body>
+    <offsetfrom>Finger4-1</offsetfrom>
+  </Joint>
+  <Body name="Finger4-3" type="dynamic" > 
+     <offsetfrom>Finger4-2</offsetfrom> 
+     <Translation>0.0 -0.001 0.034</Translation> 
+     <rotationaxis>0 1 0 90</rotationaxis>
+     <rotationaxis>1 0 0 180</rotationaxis>
+     <Geom type="trimesh" modifiable="false"> 
+       <data>tact/Finger2_5k.stl 1</data> 
+       <Render>tact/Finger2_5k.stl 1</Render> 
+     </Geom> 
+   </Body> 
+   <Joint type="hinge" name="JF4-PIP">
+     <offsetfrom>Finger4-3</offsetfrom>  
+     <Body>Finger4-2</Body>
+     <Body>Finger4-3</Body> 
+     <limitsdeg>0 90</limitsdeg> 
+     <axis>0 0 -1</axis> 
+     <maxvel>1</maxvel>
+   </Joint>
+  <Body name="Finger4-4" type="dynamic" >
+    <offsetfrom>Finger4-3</offsetfrom>
+    <Translation>0.041 -0.001 0</Translation>
+    <rotationaxis>0 0 1 0</rotationaxis>
+    <Geom type="trimesh" modifiable="false">
+      <Translation>0 0 0</Translation>
+      <data>tact/Thumb.stl 1</data>
+      <Render>tact/Thumb.stl 1</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF4-DIP" type="hinge" enable="false" mimic_pos="JF4-PIP*67/90" mimic_vel="|JF4-PIP 1">
+    <Body>Finger4-3</Body>
+    <Body>Finger4-4</Body>
+    <offsetfrom>Finger4-4</offsetfrom>
+    <limitsdeg>0 67</limitsdeg>
+    <axis>0 0 -1</axis>
+    <maxvel>1</maxvel>
+  </Joint> 
+
+<!--   add adjacent links, necessary in order to prevent bogus collisions --> 
+  <adjacent>Finger0-0 Finger0-1</adjacent> 
+  <adjacent>Finger0-1 Finger0-2</adjacent> 
+  <adjacent>Finger1-0 Finger1-1</adjacent>
+  <adjacent>Finger1-1 Finger1-2</adjacent>
+  <adjacent>Finger2-0 Finger2-1</adjacent>
+  <adjacent>Finger2-1 Finger2-2</adjacent>
+  <adjacent>Finger3-0 Finger3-1</adjacent>
+  <adjacent>Finger3-1 Finger3-2</adjacent>
+  <adjacent>Finger4-0 Finger4-1</adjacent>
+  <adjacent>Finger4-1 Finger4-2</adjacent>
+  <adjacent>Finger4-2 Finger4-3</adjacent>
+  <adjacent>Finger4-3 Finger4-4</adjacent>
+  <adjacent>handbase Finger0-0</adjacent> 
+  <adjacent>handbase Finger1-0</adjacent>
+  <adjacent>handbase Finger2-0</adjacent>
+  <adjacent>handbase Finger3-0</adjacent>
+  <adjacent>handbase Finger4-0</adjacent>
+  <adjacent>handbase Finger4-1</adjacent> 
+</KinBody>

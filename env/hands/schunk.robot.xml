@@ -1,0 +1,11 @@
+<Robot>
+  <KinBody file="kinbody/schunkNew.kinbody.xml"/>
+  <Manipulator name="hand">
+    <base>hand_base</base>
+    <effector>hand_base</effector>
+    <Translation>0 0 0.12</Translation>
+    <joints>A1_Joint A2_Joint A3_Joint B2_Joint B3_Joint C2_Joint C3_Joint</joints>
+    <closingdirection>0 1 1 1 1 1 1</closingdirection>
+    <direction>0 0 1</direction>
+  </Manipulator>
+</Robot>
