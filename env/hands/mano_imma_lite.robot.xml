@@ -8,6 +8,6 @@
     <closingdirection>-1 -1 1 1 1 1 -1 -1 1 -1 -1 1 -1 -1 1</closingdirection> -->
 	<joints>JIP JIPM JIMD  JTMCP JTP JTD  JMP JMPM JMMD JRP JRPM JRMD JLP JLPM JLMD</joints> 
     <closingdirection>-1 1 1 -1 1 1 1 1 1 1 1 1 -1 1 1</closingdirection> 
-    <direction>0 1 0</direction>
+    <direction>1 0 0</direction>
   </Manipulator>
 </Robot>
