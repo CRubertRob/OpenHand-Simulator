@@ -1,13 +1,13 @@
 <Robot>
-  <KinBody file="./kinbody/mano_imma.kinbody.xml"/>
+  <KinBody file="./kinbody/mano_imma_lite.kinbody.xml"/>
   <Manipulator name="hand">
     <base>handbase</base>
     <effector>handbase</effector>
     <Translation>0.01 -0.07 0</Translation>
 <!--    <joints>JIP JIPM JIMD JTMCP JTP JTD JMP JMPM JMMD JRP JRPM JRMD JLP JLPM JLMD</joints> 
     <closingdirection>-1 -1 1 1 1 1 -1 -1 1 -1 -1 1 -1 -1 1</closingdirection> -->
-	<joints>JIP JIPM JIMD  JTMCP JTP JTD </joints> 
-    <closingdirection>-1 -1 1  1 1 1 </closingdirection> 
+	<joints>JIP JIPM JIMD  JTMCP JTP JTD  JMP JMPM JMMD JRP JRPM JRMD JLP JLPM JLMD</joints> 
+    <closingdirection>-1 1 1 -1 1 1 1 1 1 1 1 1 -1 1 1</closingdirection> 
     <direction>0 1 0</direction>
   </Manipulator>
 </Robot>
