@@ -559,7 +559,11 @@ def Volume(contacts, dmax):
     # find the screw coordinates
     contacts=array(contacts).transpose()
     S = hstack([vstack(contacts[3:].transpose()), vstack((cross(vstack(contacts[0:3].transpose()), vstack(contacts[3:].transpose())))/dmax)])
-    
+    new_S=[]
+    for index in S:
+        if ~isnan(sum(index))==-1:  
+            new_S.append(index)
+    S=new_S        
     #need at least 7 contact wrenches to have force closure in 3D
     if(len(S) < 6 or linalg.matrix_rank(S) < 5):
         return 0
